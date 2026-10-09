@@ -13,7 +13,7 @@ export function Header() {
   const iconButton = 'grid size-11 place-items-center rounded-full text-ink hover:bg-tint';
 
   return (
-    <header className="safe-top sticky top-0 z-10 bg-paper/95 backdrop-blur">
+    <header className="safe-top sticky top-0 z-10 bg-paper/95 backdrop-blur lg:hidden">
       <div className="flex items-center justify-between gap-2 px-4 py-2">
         <Link to="/" className="flex min-h-11 items-center gap-2.5 font-bold text-canopy">
           <Logo />

@@ -56,8 +56,30 @@ export function ResultPage() {
     navigate('/history', { replace: true });
   }
 
+  const actions = (
+      <div className="grid gap-3 pt-1 sm:grid-cols-3 lg:grid-cols-1">
+        <Button
+          onClick={() =>
+            void shareText(t('result.shareText', { crop: t(`crops.${scan.crop}`), headline, percent }))
+          }
+        >
+          <Share2 aria-hidden="true" className="size-5" />
+          {t('result.share')}
+        </Button>
+        <Link to="/scan" className={buttonClass('soft')}>
+          <ScanLine aria-hidden="true" className="size-5" />
+          {t('result.scanAgain')}
+        </Link>
+        <Button variant="danger" onClick={() => void remove()}>
+          <Trash2 aria-hidden="true" className="size-5" />
+          {t('result.delete')}
+        </Button>
+      </div>
+  );
+
   return (
-    <article className="space-y-4 pt-2">
+    <article className="grid gap-4 pt-2 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:items-start lg:gap-10 lg:pt-0">
+      <div className="space-y-4 lg:sticky lg:top-8">
       <div className="relative overflow-hidden rounded-3xl bg-tint">
         <BlobImage blob={scan.image} alt="" className="aspect-[4/3] w-full object-cover" />
         <Viewfinder className="absolute inset-4 text-white/90" />
@@ -70,7 +92,7 @@ export function ResultPage() {
       )}
 
       <header className="space-y-3">
-        <h1 className="text-2xl font-bold leading-snug text-canopy">{headline}</h1>
+        <h1 className="text-2xl font-bold leading-snug text-canopy lg:text-3xl">{headline}</h1>
         <div className="flex flex-wrap items-center gap-2">
           <span className="text-sm text-muted">{t(`crops.${scan.crop}`)}</span>
           {scan.state !== 'not_a_leaf' && scan.state !== 'error' && (
@@ -84,6 +106,10 @@ export function ResultPage() {
         )}
         {hasHelp && <p className="text-muted">{t(helpKey)}</p>}
       </header>
+      <div className="hidden lg:block">{actions}</div>
+      </div>
+
+      <div className="space-y-4">
 
       {showReport && content && (
         <>
@@ -147,28 +173,12 @@ export function ResultPage() {
 
       <Notice icon={<Info aria-hidden="true" className="size-5" />}>{t('result.disclaimer')}</Notice>
 
-      <div className="grid gap-3 pt-1">
-        <Button
-          onClick={() =>
-            void shareText(t('result.shareText', { crop: t(`crops.${scan.crop}`), headline, percent }))
-          }
-        >
-          <Share2 aria-hidden="true" className="size-5" />
-          {t('result.share')}
-        </Button>
-        <Link to="/scan" className={buttonClass('soft')}>
-          <ScanLine aria-hidden="true" className="size-5" />
-          {t('result.scanAgain')}
-        </Link>
-        <Button variant="danger" onClick={() => void remove()}>
-          <Trash2 aria-hidden="true" className="size-5" />
-          {t('result.delete')}
-        </Button>
-      </div>
+      <div className="lg:hidden">{actions}</div>
       <p className="flex items-center justify-center gap-1.5 pb-2 text-xs text-muted">
         <TriangleAlert aria-hidden="true" className="size-3.5" />
         {t('result.model', { version: scan.modelVersion })}
       </p>
+      </div>
     </article>
   );
 }

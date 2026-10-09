@@ -7,14 +7,14 @@ const VARIANTS: Record<Variant, string> = {
   primary: 'bg-leaf text-white',
   soft: 'bg-tint text-canopy',
   light: 'bg-white text-canopy',
-  ghost: 'text-leaf',
+  ghost: 'text-leaf hover:bg-tint',
   danger: 'bg-clay-tint text-clay',
 };
 
 /** Class names for anything that should look like a button (also used on router links). */
 export function buttonClass(variant: Variant = 'primary', className?: string): string {
   return cn(
-    'inline-flex min-h-12 items-center justify-center gap-2 rounded-2xl px-5 text-base font-semibold transition-transform active:scale-[0.98] disabled:opacity-50',
+    'inline-flex min-h-12 items-center justify-center gap-2 rounded-2xl px-5 text-base font-semibold transition hover:brightness-95 active:scale-[0.98] disabled:opacity-50',
     VARIANTS[variant],
     className,
   );

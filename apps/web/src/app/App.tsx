@@ -3,6 +3,7 @@ import { BrowserRouter, Navigate, Outlet, Route, Routes } from 'react-router-dom
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useTranslation } from 'react-i18next';
 import { useSettings } from '../db/settings';
+import { ErrorBoundary } from '../components/ErrorBoundary';
 import { AppShell } from './AppShell';
 import { HomePage } from '../features/home';
 import { OnboardingPage } from '../features/onboarding';
@@ -29,6 +30,7 @@ function Loading() {
 
 export function App() {
   return (
+    <ErrorBoundary>
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <Suspense fallback={<Loading />}>
@@ -50,5 +52,6 @@ export function App() {
         </Suspense>
       </BrowserRouter>
     </QueryClientProvider>
+    </ErrorBoundary>
   );
 }

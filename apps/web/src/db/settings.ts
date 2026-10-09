@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import type { CropId, Lang } from '@agrixore/shared';
+import type { CropChoice, CropId, Lang } from '@agrixore/shared';
 import { db } from './db';
 import { i18n } from '../i18n';
 
@@ -13,6 +13,9 @@ export interface Settings {
   theme: 'light' | 'sunlight';
   onboardingDone: boolean;
   deviceId: string;
+  /** Crop used on the last scan; the scan screen starts with it. */
+  lastCrop: CropChoice | null;
+  installDismissed: boolean;
 }
 
 function defaultSettings(): Settings {
@@ -24,6 +27,8 @@ function defaultSettings(): Settings {
     theme: 'light',
     onboardingDone: false,
     deviceId: crypto.randomUUID(),
+    lastCrop: null,
+    installDismissed: false,
   };
 }
 

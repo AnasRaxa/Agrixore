@@ -15,7 +15,6 @@
   --grain-tint: #fbf1dc;
   --clay: #a8341f;
   --clay-tint: #fbe7e3;
-  --backdrop: #dce6d5;
 }
 
 /* Sunlight mode: higher contrast for use outdoors */
@@ -33,7 +32,6 @@
   --grain-tint: #fff3cf;
   --clay: #8f1d0c;
   --clay-tint: #ffe3dd;
-  --backdrop: #ffffff;
 }
 
 @theme inline {
@@ -57,7 +55,7 @@ html[data-text-size='xl'] { font-size: 125%; }
 
 body {
   margin: 0;
-  background: var(--backdrop);
+  background: var(--paper);
   color: var(--ink);
   font-family: 'Hanken Grotesk Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
   font-size: 1rem;
@@ -71,17 +69,6 @@ html[lang='ur'] body {
   --font-urdu: 'Noto Naskh Arabic Variable', 'Noto Naskh Arabic', 'Hanken Grotesk Variable', serif;
   font-family: var(--font-urdu);
   line-height: 1.95;
-}
-
-.app-frame {
-  position: relative;
-  margin-inline: auto;
-  min-height: 100dvh;
-  max-width: 28rem;
-  background: var(--paper);
-}
-@media (min-width: 640px) {
-  .app-frame { box-shadow: 0 0 0 1px var(--line); }
 }
 
 .safe-top { padding-top: env(safe-area-inset-top, 0px); }

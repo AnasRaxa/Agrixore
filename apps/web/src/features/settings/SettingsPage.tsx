@@ -40,8 +40,9 @@ export function SettingsPage() {
   }
 
   return (
-    <div className="space-y-7 pt-2">
-      <h1 className="text-2xl font-bold text-canopy">{t('settings.title')}</h1>
+    <div className="pt-2 lg:pt-0">
+      <h1 className="mb-6 text-2xl font-bold text-canopy lg:text-3xl">{t('settings.title')}</h1>
+      <div className="grid gap-7 lg:grid-cols-2 lg:gap-x-12 lg:gap-y-10">
 
       <Group title={t('settings.language')}>
         <div className="flex gap-2">
@@ -92,6 +93,7 @@ export function SettingsPage() {
         </div>
         <Notice>{t('settings.disclaimer')}</Notice>
       </Group>
+      </div>
     </div>
   );
 }

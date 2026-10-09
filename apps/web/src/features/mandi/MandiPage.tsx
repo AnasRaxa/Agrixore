@@ -41,7 +41,7 @@ export function MandiPage() {
   return (
     <section className="space-y-4 pt-2">
       <div>
-        <h1 className="text-2xl font-bold text-canopy">{t('mandi.title')}</h1>
+        <h1 className="text-2xl font-bold text-canopy lg:text-3xl">{t('mandi.title')}</h1>
         <p className="text-sm text-muted">{t('mandi.unit')}</p>
       </div>
 
@@ -58,7 +58,9 @@ export function MandiPage() {
         </Notice>
       ))}
 
-      <div className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1">
+      <div className="grid gap-4 lg:grid-cols-[18rem_minmax(0,1fr)] lg:grid-rows-[auto_1fr] lg:items-start lg:gap-x-10 lg:gap-y-8">
+      <div className="space-y-4 lg:col-start-1 lg:row-start-1">
+      <div className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1 lg:mx-0 lg:flex-wrap lg:overflow-visible lg:px-0">
         {COMMODITIES.map((c) => <Chip key={c} selected={commodity === c} onClick={() => setCommodity(c)}>{t(`mandi.commodity.${c}`)}</Chip>)}
       </div>
 
@@ -69,12 +71,14 @@ export function MandiPage() {
           {districtIds.map((id) => <option key={id} value={id}>{districtName(id)}</option>)}
         </select>
       </label>
+      </div>
 
+      <div className="lg:col-start-2 lg:row-span-2 lg:row-start-1">
       {visible.length === 0 && <p className="py-6 text-center text-muted">{t('mandi.empty')}</p>}
 
-      <ul className="space-y-3">
+      <ul className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
         {visible.map((r) => (
-          <li key={rowKey(r)} className="rounded-2xl border border-line bg-surface p-4">
+          <li key={rowKey(r)} className="rounded-2xl border border-line bg-surface p-4 lg:p-5">
             <div className="flex items-start justify-between gap-3">
               <div>
                 <p className="font-semibold text-canopy">{districtName(r.districtId)}</p>
@@ -123,8 +127,9 @@ export function MandiPage() {
           </li>
         ))}
       </ul>
+      </div>
 
-      <div>
+      <div className="lg:col-start-1 lg:row-start-2">
         <h2 className="mb-2 font-semibold">{t('mandi.yourAlerts')}</h2>
         {targets.length === 0 ? (
           <p className="text-muted">{t('mandi.noAlerts')}</p>
@@ -145,6 +150,7 @@ export function MandiPage() {
             ))}
           </ul>
         )}
+      </div>
       </div>
     </section>
   );
