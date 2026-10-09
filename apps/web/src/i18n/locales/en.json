@@ -1,0 +1,229 @@
+{
+  "app": {
+    "name": "Agrixore",
+    "tagline": "Your pocket farming assistant"
+  },
+  "nav": {
+    "home": "Home",
+    "scan": "Scan",
+    "weather": "Weather",
+    "mandi": "Mandi"
+  },
+  "crops": {
+    "maize": "Corn",
+    "wheat": "Wheat",
+    "cotton": "Cotton",
+    "unknown": "Not sure"
+  },
+  "common": {
+    "back": "Back",
+    "next": "Next",
+    "skip": "Skip",
+    "finish": "Start",
+    "save": "Save",
+    "delete": "Delete",
+    "cancel": "Cancel",
+    "retry": "Try again",
+    "offline": "Offline",
+    "updated": "Updated {{time}}",
+    "stale": "This may be out of date.",
+    "settings": "Settings",
+    "history": "History",
+    "loading": "Loading"
+  },
+  "header": {
+    "switchLanguage": "Switch language"
+  },
+  "update": {
+    "ready": "A new version is ready.",
+    "action": "Update"
+  },
+  "onboarding": {
+    "step": "Step {{n}} of {{total}}",
+    "languageTitle": "Choose your language",
+    "cropsTitle": "What do you grow?",
+    "cropsHint": "Pick one or more. You can change this later.",
+    "locationTitle": "Where is your farm?",
+    "locationHint": "We use this for weather and prices.",
+    "useGps": "Use my location",
+    "locating": "Finding your location…",
+    "gpsFailed": "We could not get your location. Choose a district instead.",
+    "pickPlace": "Or choose a district",
+    "placeholder": "Select a district"
+  },
+  "home": {
+    "greeting": "Hello, farmer",
+    "heroTitle": "Scan a crop leaf",
+    "heroBody": "Find out what is wrong in seconds. Works without internet.",
+    "heroButton": "Take a photo",
+    "tileWeather": "Weather",
+    "tileMandi": "Mandi",
+    "tileHistory": "History",
+    "lastScan": "Last scan",
+    "weatherSetup": "Set location"
+  },
+  "scan": {
+    "title": "Scan a leaf",
+    "cropLabel": "Which crop?",
+    "tipsTitle": "For a clear result",
+    "tip1": "Use daylight, not flash.",
+    "tip2": "Fill the frame with one leaf.",
+    "tip3": "Hold steady until the photo is sharp.",
+    "takePhoto": "Take a photo",
+    "fromGallery": "Choose from gallery",
+    "analyzing": "Checking the leaf on your phone…",
+    "analyzingHint": "Your photo stays on this device.",
+    "failed": "We could not read this photo. Try another one."
+  },
+  "result": {
+    "title": "Result",
+    "headline": {
+      "confident": "{{name}}",
+      "possible": "Possibly {{name}}",
+      "unsure": "We are not sure",
+      "healthy": "The leaf looks healthy",
+      "not_a_leaf": "This does not look like a leaf",
+      "error": "Something went wrong"
+    },
+    "help": {
+      "possible": "Take a clearer photo to be sure.",
+      "unsure": "Try again in daylight with one leaf filling the frame, or ask an expert.",
+      "not_a_leaf": "Take a photo of a single crop leaf.",
+      "error": "Please try again."
+    },
+    "confidence": "{{percent}}% sure",
+    "demoTitle": "Demo result",
+    "demoBody": "No trained model is installed yet. This is a sample, not a real diagnosis.",
+    "about": "About",
+    "symptoms": "What to look for",
+    "spread": "How it spreads",
+    "prevention": "Prevention",
+    "treatment": "Treatment",
+    "cultural": "Field practices first",
+    "organic": "Organic options",
+    "chemical": "Chemicals, last resort",
+    "noneYet": "Nothing reviewed yet.",
+    "dosageHidden": "The dose is shown only after expert review. Follow the product label and ask your extension officer.",
+    "safety": "Stay safe",
+    "expert": "When to ask an expert",
+    "reviewed": "Reviewed by an expert",
+    "draft": "Draft, not yet reviewed by an expert",
+    "disclaimer": "Advisory only. This app does not replace an agriculture expert.",
+    "share": "Share",
+    "scanAgain": "Scan again",
+    "delete": "Delete this scan",
+    "confirmDelete": "Delete this scan?",
+    "notFound": "This scan was not found.",
+    "shareText": "Agrixore: {{crop}}, {{headline}} ({{percent}}% sure). Advisory only.",
+    "model": "Model {{version}}"
+  },
+  "history": {
+    "title": "Scan history",
+    "all": "All",
+    "empty": "No scans yet",
+    "emptyBody": "Scan a crop leaf and the result will be saved here.",
+    "emptyAction": "Scan a leaf"
+  },
+  "weather": {
+    "title": "Weather",
+    "locationNeeded": "Choose your location",
+    "locationNeededBody": "Weather needs a place. Pick your district in settings.",
+    "chooseLocation": "Choose location",
+    "humidity": "Humidity",
+    "wind": "Wind",
+    "rain": "Rain",
+    "refresh": "Refresh",
+    "offlineNote": "You are offline. Showing saved weather.",
+    "noData": "No weather saved yet. Connect to the internet once to load it.",
+    "error": "We could not load the weather. Showing the last saved data.",
+    "sevenDay": "Next 7 days",
+    "irrigation": "Irrigation advice",
+    "advice": {
+      "skip": "Rain is likely soon. You can skip watering today.",
+      "hot": "It will be very hot. Water early in the morning or in the evening.",
+      "usual": "No rain expected. Irrigate as usual."
+    },
+    "alert": {
+      "heavyRain": "Heavy rain expected {{day}}",
+      "frost": "Frost possible {{day}}",
+      "heatwave": "Very hot weather expected {{day}}"
+    },
+    "condition": {
+      "clear": "Clear",
+      "partly": "Partly cloudy",
+      "cloudy": "Cloudy",
+      "fog": "Fog",
+      "drizzle": "Drizzle",
+      "rain": "Rain",
+      "snow": "Snow",
+      "storm": "Thunderstorm"
+    },
+    "today": "Today"
+  },
+  "mandi": {
+    "title": "Mandi prices",
+    "sampleTitle": "Sample data",
+    "sampleBody": "These are example numbers to preview the screen. They are not real prices.",
+    "unit": "PKR per 40 kg",
+    "modal": "Typical",
+    "min": "Low",
+    "max": "High",
+    "marketDate": "Market date {{date}}",
+    "sample": "Sample",
+    "allDistricts": "All districts",
+    "district": "District",
+    "setAlert": "Set price alert",
+    "alertAbove": "Goes above",
+    "alertBelow": "Falls below",
+    "targetPrice": "Target price (PKR)",
+    "saveAlert": "Save alert",
+    "yourAlerts": "Your alerts",
+    "noAlerts": "No alerts yet",
+    "alertNote": "Alerts are checked when you open the app and prices are real.",
+    "targetHit": "{{commodity}} in {{district}} is at {{price}} PKR.",
+    "empty": "No prices for this selection.",
+    "commodity": {
+      "wheat": "Wheat",
+      "rice": "Rice",
+      "maize": "Corn",
+      "cotton": "Cotton",
+      "onion": "Onion",
+      "potato": "Potato",
+      "tomato": "Tomato"
+    }
+  },
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
+    "crops": "My crops",
+    "location": "My location",
+    "useGps": "Use my location",
+    "locating": "Finding your location…",
+    "gpsFailed": "We could not get your location.",
+    "chooseDistrict": "Choose a district",
+    "textSize": "Text size",
+    "size": {
+      "normal": "Normal",
+      "large": "Large",
+      "xl": "Extra large"
+    },
+    "theme": "Display",
+    "themeOption": {
+      "light": "Standard",
+      "sunlight": "Sunlight"
+    },
+    "data": "Data on this phone",
+    "clearHistory": "Clear scan history",
+    "confirmClearHistory": "Delete all saved scans?",
+    "clearAll": "Clear all data",
+    "confirmClearAll": "Delete all saved data on this phone? This cannot be undone.",
+    "about": "About",
+    "version": "Version {{version}}",
+    "model": "Disease model",
+    "modelDemo": "Not installed (demo mode)",
+    "modelInstalled": "Version {{version}}",
+    "weatherCredit": "Weather data: Open-Meteo.com",
+    "disclaimer": "Agrixore gives advisory information only. It does not replace an agriculture expert.",
+    "myLocation": "My location"
+  }
+}

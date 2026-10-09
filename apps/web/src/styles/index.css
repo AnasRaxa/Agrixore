@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+/* Design tokens: calm leaf greens on a pale sage-white. Amber = caution, clay red = danger only. */
+:root {
+  --paper: #f4f7f1;
+  --surface: #ffffff;
+  --tint: #e6f0e1;
+  --line: #d6e1d0;
+  --leaf: #2f6b3f;
+  --canopy: #1e4a2b;
+  --sprout: #8fc27a;
+  --ink: #1b2a20;
+  --muted: #5b6d5f;
+  --grain: #8a5a0b;
+  --grain-tint: #fbf1dc;
+  --clay: #a8341f;
+  --clay-tint: #fbe7e3;
+  --backdrop: #dce6d5;
+}
+
+/* Sunlight mode: higher contrast for use outdoors */
+[data-theme='sunlight'] {
+  --paper: #ffffff;
+  --surface: #ffffff;
+  --tint: #e3f2dc;
+  --line: #1b2a20;
+  --leaf: #14501f;
+  --canopy: #0b3314;
+  --sprout: #3f7d2a;
+  --ink: #000000;
+  --muted: #243228;
+  --grain: #6b4300;
+  --grain-tint: #fff3cf;
+  --clay: #8f1d0c;
+  --clay-tint: #ffe3dd;
+  --backdrop: #ffffff;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-surface: var(--surface);
+  --color-tint: var(--tint);
+  --color-line: var(--line);
+  --color-leaf: var(--leaf);
+  --color-canopy: var(--canopy);
+  --color-sprout: var(--sprout);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-grain: var(--grain);
+  --color-grain-tint: var(--grain-tint);
+  --color-clay: var(--clay);
+  --color-clay-tint: var(--clay-tint);
+}
+
+html[data-text-size='large'] { font-size: 112.5%; }
+html[data-text-size='xl'] { font-size: 125%; }
+
+body {
+  margin: 0;
+  background: var(--backdrop);
+  color: var(--ink);
+  font-family: 'Hanken Grotesk Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-tap-highlight-color: transparent;
+  text-rendering: optimizeLegibility;
+}
+
+/* Urdu: Naskh script reads better than Nastaliq at small sizes. Swap here to change the Urdu font. */
+html[lang='ur'] body {
+  --font-urdu: 'Noto Naskh Arabic Variable', 'Noto Naskh Arabic', 'Hanken Grotesk Variable', serif;
+  font-family: var(--font-urdu);
+  line-height: 1.95;
+}
+
+.app-frame {
+  position: relative;
+  margin-inline: auto;
+  min-height: 100dvh;
+  max-width: 28rem;
+  background: var(--paper);
+}
+@media (min-width: 640px) {
+  .app-frame { box-shadow: 0 0 0 1px var(--line); }
+}
+
+.safe-top { padding-top: env(safe-area-inset-top, 0px); }
+.safe-bottom { padding-bottom: env(safe-area-inset-bottom, 0px); }
+
+:focus-visible { outline: 3px solid var(--leaf); outline-offset: 2px; }
+
+/* One considered motion: the scan line, shown only while a leaf is being checked */
+@keyframes scan-line {
+  from { top: 0; }
+  to { top: calc(100% - 2px); }
+}
+.scan-line { animation: scan-line 1.6s ease-in-out infinite alternate; }
+
+@media (prefers-reduced-motion: reduce) {
+  .scan-line { animation: none; }
+  * { scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
+}
+
+details > summary { list-style: none; }
+details > summary::-webkit-details-marker { display: none; }

@@ -1,0 +1,83 @@
+{
+  "id": "maize_common_rust",
+  "crop": "maize",
+  "kind": "disease",
+  "name": {
+    "en": "Common rust",
+    "ur": "عام زنگ (کامن رسٹ)"
+  },
+  "summary": {
+    "en": "A fungal disease that forms small reddish-brown pustules on both sides of the leaf.",
+    "ur": "یہ پھپھوندی کی بیماری ہے جس میں پتے کی دونوں سطحوں پر چھوٹے سرخی مائل بھورے ابھار بن جاتے ہیں۔"
+  },
+  "symptoms": {
+    "en": [
+      "Small, powdery, brick-red to brown pustules on both leaf surfaces.",
+      "Leaves can yellow and dry early when the attack is heavy."
+    ],
+    "ur": [
+      "پتے کی دونوں سطحوں پر چھوٹے، پاؤڈر جیسے اینٹ جیسے سرخ سے بھورے ابھار۔",
+      "شدید حملے میں پتے وقت سے پہلے پیلے ہو کر سوکھ سکتے ہیں۔"
+    ]
+  },
+  "spread": {
+    "en": "Spores travel by wind. Cool, humid weather favours the disease.",
+    "ur": "جراثیم ہوا سے پھیلتے ہیں۔ ٹھنڈا اور مرطوب موسم بیماری کو بڑھاتا ہے۔"
+  },
+  "prevention": {
+    "en": [
+      "Use tolerant or resistant hybrids where available.",
+      "Avoid very late sowing.",
+      "Check the field regularly, especially in cool, humid weather."
+    ],
+    "ur": [
+      "جہاں دستیاب ہوں برداشت رکھنے والے یا مزاحم ہائبرڈ استعمال کریں۔",
+      "بہت دیر سے بوائی سے بچیں۔",
+      "کھیت کا باقاعدہ معائنہ کریں، خاص طور پر ٹھنڈے اور مرطوب موسم میں۔"
+    ]
+  },
+  "treatment": {
+    "cultural": {
+      "en": [
+        "After harvest, remove and destroy heavily infected crop residue."
+      ],
+      "ur": [
+        "کٹائی کے بعد شدید متاثرہ فصل کی باقیات کو ہٹا کر تلف کر دیں۔"
+      ]
+    },
+    "organic": {
+      "en": [],
+      "ur": []
+    },
+    "chemical": [
+      {
+        "activeIngredient": "Foliar fungicide (triazole group), only if advised by an agriculture expert",
+        "note": {
+          "en": "Used only when the attack is heavy. Ask your extension officer for the product and timing.",
+          "ur": "صرف شدید حملے میں استعمال ہوتا ہے۔ مصنوعات اور وقت کے لیے اپنے توسیعی افسر سے پوچھیں۔"
+        }
+      }
+    ]
+  },
+  "reviewStatus": "draft",
+  "sources": [],
+  "version": 1,
+  "safety": {
+    "en": [
+      "Read and follow the product label.",
+      "Wear gloves, a mask and long sleeves when spraying.",
+      "Do not spray near water sources, and keep children and animals away.",
+      "Respect the waiting period before harvest."
+    ],
+    "ur": [
+      "پروڈکٹ کے لیبل کو پڑھیں اور اس پر عمل کریں۔",
+      "سپرے کرتے وقت دستانے، ماسک اور پوری آستین والے کپڑے پہنیں۔",
+      "پانی کے ذرائع کے قریب سپرے نہ کریں اور بچوں اور جانوروں کو دور رکھیں۔",
+      "کٹائی سے پہلے انتظار کی مدت کا خیال رکھیں۔"
+    ]
+  },
+  "whenToCallExpert": {
+    "en": "If the problem spreads quickly or you are unsure, show the plant to your local agriculture extension officer.",
+    "ur": "اگر مسئلہ تیزی سے پھیلے یا آپ کو یقین نہ ہو تو پودا اپنے مقامی زرعی توسیعی افسر کو دکھائیں۔"
+  }
+}

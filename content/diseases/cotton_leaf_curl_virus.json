@@ -1,0 +1,87 @@
+{
+  "id": "cotton_leaf_curl_virus",
+  "crop": "cotton",
+  "kind": "virus",
+  "name": {
+    "en": "Cotton leaf curl virus",
+    "ur": "کپاس کا پتا مروڑ وائرس"
+  },
+  "summary": {
+    "en": "A virus spread by whitefly that curls the leaves and stunts the plant.",
+    "ur": "یہ سفید مکھی سے پھیلنے والا وائرس ہے جو پتوں کو مروڑ دیتا ہے اور پودے کی بڑھوتری روک دیتا ہے۔"
+  },
+  "symptoms": {
+    "en": [
+      "Leaves curl upward or downward and veins look thick and dark.",
+      "Small leaf-like growths may appear under the leaf.",
+      "Plants stay short and give fewer bolls."
+    ],
+    "ur": [
+      "پتے اوپر یا نیچے کی طرف مڑ جاتے ہیں اور رگیں موٹی اور گہری نظر آتی ہیں۔",
+      "پتے کے نیچے چھوٹے پتوں جیسے ابھار بن سکتے ہیں۔",
+      "پودے چھوٹے رہتے ہیں اور ٹینڈے کم لگتے ہیں۔"
+    ]
+  },
+  "spread": {
+    "en": "Whitefly carries the virus from infected plants and weeds to healthy plants.",
+    "ur": "سفید مکھی وائرس کو متاثرہ پودوں اور جڑی بوٹیوں سے صحت مند پودوں تک پہنچاتی ہے۔"
+  },
+  "prevention": {
+    "en": [
+      "Control whitefly early and watch its numbers.",
+      "Remove weeds and other plants that host the virus.",
+      "Grow tolerant varieties recommended for your area and sow on time."
+    ],
+    "ur": [
+      "سفید مکھی پر ابتدا ہی میں قابو پائیں اور اس کی تعداد پر نظر رکھیں۔",
+      "جڑی بوٹیاں اور دیگر میزبان پودے ہٹا دیں۔",
+      "اپنے علاقے کے لیے تجویز کردہ برداشت رکھنے والی اقسام کاشت کریں اور بروقت بوائی کریں۔"
+    ]
+  },
+  "treatment": {
+    "cultural": {
+      "en": [
+        "Uproot and destroy badly infected young plants so the virus does not spread.",
+        "There is no cure for an infected plant. Focus on protecting healthy plants."
+      ],
+      "ur": [
+        "شدید متاثرہ چھوٹے پودوں کو اکھاڑ کر تلف کر دیں تاکہ وائرس نہ پھیلے۔",
+        "متاثرہ پودے کا کوئی علاج نہیں۔ صحت مند پودوں کو بچانے پر توجہ دیں۔"
+      ]
+    },
+    "organic": {
+      "en": [],
+      "ur": []
+    },
+    "chemical": [
+      {
+        "activeIngredient": "Whitefly control with an insecticide advised by an agriculture expert",
+        "note": {
+          "en": "This controls the insect that spreads the virus, not the virus itself. Ask your extension officer for the product and timing.",
+          "ur": "یہ اس کیڑے کو قابو کرتا ہے جو وائرس پھیلاتا ہے، وائرس کو نہیں۔ مصنوعات اور وقت کے لیے اپنے توسیعی افسر سے پوچھیں۔"
+        }
+      }
+    ]
+  },
+  "reviewStatus": "draft",
+  "sources": [],
+  "version": 1,
+  "safety": {
+    "en": [
+      "Read and follow the product label.",
+      "Wear gloves, a mask and long sleeves when spraying.",
+      "Do not spray near water sources, and keep children and animals away.",
+      "Respect the waiting period before harvest."
+    ],
+    "ur": [
+      "پروڈکٹ کے لیبل کو پڑھیں اور اس پر عمل کریں۔",
+      "سپرے کرتے وقت دستانے، ماسک اور پوری آستین والے کپڑے پہنیں۔",
+      "پانی کے ذرائع کے قریب سپرے نہ کریں اور بچوں اور جانوروں کو دور رکھیں۔",
+      "کٹائی سے پہلے انتظار کی مدت کا خیال رکھیں۔"
+    ]
+  },
+  "whenToCallExpert": {
+    "en": "If the problem spreads quickly or you are unsure, show the plant to your local agriculture extension officer.",
+    "ur": "اگر مسئلہ تیزی سے پھیلے یا آپ کو یقین نہ ہو تو پودا اپنے مقامی زرعی توسیعی افسر کو دکھائیں۔"
+  }
+}

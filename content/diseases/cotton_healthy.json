@@ -1,0 +1,65 @@
+{
+  "id": "cotton_healthy",
+  "crop": "cotton",
+  "kind": "healthy",
+  "name": {
+    "en": "Healthy cotton leaf",
+    "ur": "کپاس کا صحت مند پتا"
+  },
+  "summary": {
+    "en": "No sign of disease was found on this leaf.",
+    "ur": "اس پتے پر بیماری کی کوئی علامت نہیں ملی۔"
+  },
+  "symptoms": {
+    "en": [],
+    "ur": []
+  },
+  "spread": {
+    "en": "",
+    "ur": ""
+  },
+  "prevention": {
+    "en": [
+      "Check the underside of leaves for whitefly every week.",
+      "Remove weeds around the field.",
+      "Avoid water-logging and over-watering."
+    ],
+    "ur": [
+      "ہر ہفتے پتوں کے نیچے سفید مکھی دیکھیں۔",
+      "کھیت کے اردگرد جڑی بوٹیاں نکالیں۔",
+      "پانی کھڑا نہ ہونے دیں اور زیادہ پانی نہ دیں۔"
+    ]
+  },
+  "treatment": {
+    "cultural": {
+      "en": [],
+      "ur": []
+    },
+    "organic": {
+      "en": [],
+      "ur": []
+    },
+    "chemical": []
+  },
+  "reviewStatus": "draft",
+  "sources": [],
+  "version": 1,
+  "safety": {
+    "en": [
+      "Read and follow the product label.",
+      "Wear gloves, a mask and long sleeves when spraying.",
+      "Do not spray near water sources, and keep children and animals away.",
+      "Respect the waiting period before harvest."
+    ],
+    "ur": [
+      "پروڈکٹ کے لیبل کو پڑھیں اور اس پر عمل کریں۔",
+      "سپرے کرتے وقت دستانے، ماسک اور پوری آستین والے کپڑے پہنیں۔",
+      "پانی کے ذرائع کے قریب سپرے نہ کریں اور بچوں اور جانوروں کو دور رکھیں۔",
+      "کٹائی سے پہلے انتظار کی مدت کا خیال رکھیں۔"
+    ]
+  },
+  "whenToCallExpert": {
+    "en": "If the problem spreads quickly or you are unsure, show the plant to your local agriculture extension officer.",
+    "ur": "اگر مسئلہ تیزی سے پھیلے یا آپ کو یقین نہ ہو تو پودا اپنے مقامی زرعی توسیعی افسر کو دکھائیں۔"
+  }
+}

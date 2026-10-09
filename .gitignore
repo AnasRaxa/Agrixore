@@ -1,0 +1,18 @@
+node_modules/
+dist/
+coverage/
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+playwright-report/
+test-results/
+# ML: never commit datasets or checkpoints
+ml/data/
+ml/runs/
+*.pt
+*.pth
+*.ckpt
+# generated copies of third-party runtime files
+apps/web/public/ort/

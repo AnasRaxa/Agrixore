@@ -1,0 +1,65 @@
+{
+  "id": "maize_healthy",
+  "crop": "maize",
+  "kind": "healthy",
+  "name": {
+    "en": "Healthy corn leaf",
+    "ur": "مکئی کا صحت مند پتا"
+  },
+  "summary": {
+    "en": "No sign of disease was found on this leaf.",
+    "ur": "اس پتے پر بیماری کی کوئی علامت نہیں ملی۔"
+  },
+  "symptoms": {
+    "en": [],
+    "ur": []
+  },
+  "spread": {
+    "en": "",
+    "ur": ""
+  },
+  "prevention": {
+    "en": [
+      "Keep checking the field every week.",
+      "Remove weeds that can hold pests and diseases.",
+      "Water at the right time and avoid water-logging."
+    ],
+    "ur": [
+      "ہر ہفتے کھیت کا معائنہ کرتے رہیں۔",
+      "جڑی بوٹیاں نکالیں جن میں کیڑے اور بیماریاں پلتی ہیں۔",
+      "صحیح وقت پر پانی دیں اور پانی کھڑا نہ ہونے دیں۔"
+    ]
+  },
+  "treatment": {
+    "cultural": {
+      "en": [],
+      "ur": []
+    },
+    "organic": {
+      "en": [],
+      "ur": []
+    },
+    "chemical": []
+  },
+  "reviewStatus": "draft",
+  "sources": [],
+  "version": 1,
+  "safety": {
+    "en": [
+      "Read and follow the product label.",
+      "Wear gloves, a mask and long sleeves when spraying.",
+      "Do not spray near water sources, and keep children and animals away.",
+      "Respect the waiting period before harvest."
+    ],
+    "ur": [
+      "پروڈکٹ کے لیبل کو پڑھیں اور اس پر عمل کریں۔",
+      "سپرے کرتے وقت دستانے، ماسک اور پوری آستین والے کپڑے پہنیں۔",
+      "پانی کے ذرائع کے قریب سپرے نہ کریں اور بچوں اور جانوروں کو دور رکھیں۔",
+      "کٹائی سے پہلے انتظار کی مدت کا خیال رکھیں۔"
+    ]
+  },
+  "whenToCallExpert": {
+    "en": "If the problem spreads quickly or you are unsure, show the plant to your local agriculture extension officer.",
+    "ur": "اگر مسئلہ تیزی سے پھیلے یا آپ کو یقین نہ ہو تو پودا اپنے مقامی زرعی توسیعی افسر کو دکھائیں۔"
+  }
+}

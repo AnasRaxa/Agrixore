@@ -1,0 +1,19 @@
+{
+  "name": "agrixore",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Agrixore — offline-first PWA for farmers (disease detection, weather, mandi prices)",
+  "packageManager": "pnpm@12.10.1",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "dev": "pnpm dev:web",
+    "dev:web": "pnpm --filter @agrixore/web dev",
+    "dev:api": "echo \"API is not built yet. See ARCHITECTURE.md section 8.\"",
+    "lint": "pnpm -r --if-present lint",
+    "typecheck": "pnpm -r --if-present typecheck",
+    "test": "pnpm -r --if-present test",
+    "test:e2e": "echo \"E2E tests are added after Phase 1 screens stabilise.\"",
+    "build": "pnpm -r --if-present build",
+    "content:validate": "node scripts/validate-content.mjs"
+  }
+}

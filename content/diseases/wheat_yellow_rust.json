@@ -1,0 +1,83 @@
+{
+  "id": "wheat_yellow_rust",
+  "crop": "wheat",
+  "kind": "disease",
+  "name": {
+    "en": "Yellow (stripe) rust",
+    "ur": "پیلی کنگی (اسٹرائپ رسٹ)"
+  },
+  "summary": {
+    "en": "A fungal disease that makes yellow stripes of pustules along the leaf veins.",
+    "ur": "یہ پھپھوندی کی بیماری ہے جس میں پتے کی رگوں کے ساتھ پیلی دھاریوں کی صورت میں ابھار بنتے ہیں۔"
+  },
+  "symptoms": {
+    "en": [
+      "Yellow to orange stripes of powdery pustules along the veins.",
+      "Leaves may dry early and grain filling can suffer."
+    ],
+    "ur": [
+      "رگوں کے ساتھ پیلی سے نارنجی پاؤڈر جیسی دھاریاں۔",
+      "پتے جلد سوکھ سکتے ہیں اور دانہ بننے پر اثر پڑ سکتا ہے۔"
+    ]
+  },
+  "spread": {
+    "en": "Spores travel by wind. Cool, humid weather favours the disease.",
+    "ur": "جراثیم ہوا سے پھیلتے ہیں۔ ٹھنڈا اور مرطوب موسم بیماری کو بڑھاتا ہے۔"
+  },
+  "prevention": {
+    "en": [
+      "Grow resistant or tolerant varieties recommended for your area.",
+      "Sow on time.",
+      "Walk the field often and check leaves from tillering onward."
+    ],
+    "ur": [
+      "اپنے علاقے کے لیے تجویز کردہ مزاحم یا برداشت رکھنے والی اقسام کاشت کریں۔",
+      "بروقت بوائی کریں۔",
+      "کھیت کا بار بار چکر لگائیں اور پھوٹ کے مرحلے سے پتے دیکھتے رہیں۔"
+    ]
+  },
+  "treatment": {
+    "cultural": {
+      "en": [
+        "Remove volunteer wheat plants and nearby grassy hosts."
+      ],
+      "ur": [
+        "خود اگنے والے گندم کے پودے اور قریبی گھاس والے میزبان پودے ہٹا دیں۔"
+      ]
+    },
+    "organic": {
+      "en": [],
+      "ur": []
+    },
+    "chemical": [
+      {
+        "activeIngredient": "Foliar fungicide (triazole group), only if advised by an agriculture expert",
+        "note": {
+          "en": "Early action matters. Ask your extension officer for the product and timing.",
+          "ur": "جلد کارروائی اہم ہے۔ مصنوعات اور وقت کے لیے اپنے توسیعی افسر سے پوچھیں۔"
+        }
+      }
+    ]
+  },
+  "reviewStatus": "draft",
+  "sources": [],
+  "version": 1,
+  "safety": {
+    "en": [
+      "Read and follow the product label.",
+      "Wear gloves, a mask and long sleeves when spraying.",
+      "Do not spray near water sources, and keep children and animals away.",
+      "Respect the waiting period before harvest."
+    ],
+    "ur": [
+      "پروڈکٹ کے لیبل کو پڑھیں اور اس پر عمل کریں۔",
+      "سپرے کرتے وقت دستانے، ماسک اور پوری آستین والے کپڑے پہنیں۔",
+      "پانی کے ذرائع کے قریب سپرے نہ کریں اور بچوں اور جانوروں کو دور رکھیں۔",
+      "کٹائی سے پہلے انتظار کی مدت کا خیال رکھیں۔"
+    ]
+  },
+  "whenToCallExpert": {
+    "en": "If the problem spreads quickly or you are unsure, show the plant to your local agriculture extension officer.",
+    "ur": "اگر مسئلہ تیزی سے پھیلے یا آپ کو یقین نہ ہو تو پودا اپنے مقامی زرعی توسیعی افسر کو دکھائیں۔"
+  }
+}
