@@ -27,8 +27,9 @@ export function OnboardingPage() {
   };
 
   return (
-    <div className="min-h-dvh bg-paper lg:grid lg:place-items-center lg:p-8">
-    <div className="safe-top safe-bottom flex min-h-dvh flex-col px-5 pb-6 pt-8 lg:min-h-0 lg:w-full lg:max-w-xl lg:rounded-3xl lg:border lg:border-line lg:bg-surface lg:p-10">
+    <div className="safe-top safe-bottom bg-paper">
+      <div className="min-h-dvh lg:grid lg:place-items-center lg:p-8">
+        <div className="flex min-h-dvh flex-col px-5 pb-6 pt-8 lg:min-h-0 lg:w-full lg:max-w-xl lg:rounded-3xl lg:border lg:border-line lg:bg-surface lg:p-10">
       <div className="flex items-center justify-between">
         <Logo className="size-11" />
         <p className="text-sm text-muted">{t('onboarding.step', { n: step + 1, total: TOTAL })}</p>
@@ -87,7 +88,8 @@ export function OnboardingPage() {
           </Button>
         </div>
       )}
-    </div>
+        </div>
+      </div>
     </div>
   );
 }
