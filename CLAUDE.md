@@ -162,6 +162,7 @@ Test the logic that matters most: confidence-to-state mapping, irrigation/alert 
 - Dexie: bump the schema version and write a migration for every change
 - Open-Meteo: set `timezone=Asia/Karachi`; verify parameter names in the current docs
 - Raw softmax is overconfident; keep calibration
+- `.safe-top` / `.safe-bottom` set padding in plain CSS, which beats Tailwind padding utilities. Use them only on a wrapper with no other padding classes
 
 ## 14. Local units cheat sheet (🟡 confirm with owner)
 

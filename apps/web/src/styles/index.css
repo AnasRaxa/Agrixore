@@ -71,6 +71,7 @@ html[lang='ur'] body {
   line-height: 1.95;
 }
 
+/* Never put these on an element that also has padding utilities (px-*, pt-*, p-*): plain CSS beats Tailwind utilities and silently removes that padding. Put them on a plain wrapper. */
 .safe-top { padding-top: env(safe-area-inset-top, 0px); }
 .safe-bottom { padding-bottom: env(safe-area-inset-bottom, 0px); }
 
