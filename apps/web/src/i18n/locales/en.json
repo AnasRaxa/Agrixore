@@ -29,7 +29,11 @@
     "stale": "This may be out of date.",
     "settings": "Settings",
     "history": "History",
-    "loading": "Loading"
+    "loading": "Loading",
+    "skipToContent": "Skip to content",
+    "errorTitle": "Something went wrong",
+    "errorBody": "Please reload the app. Your saved scans are safe on this phone.",
+    "reload": "Reload"
   },
   "header": {
     "switchLanguage": "Switch language"
@@ -60,7 +64,8 @@
     "tileMandi": "Mandi",
     "tileHistory": "History",
     "lastScan": "Last scan",
-    "weatherSetup": "Set location"
+    "weatherSetup": "Set location",
+    "recent": "Recent"
   },
   "scan": {
     "title": "Scan a leaf",
@@ -73,7 +78,10 @@
     "fromGallery": "Choose from gallery",
     "analyzing": "Checking the leaf on your phone…",
     "analyzingHint": "Your photo stays on this device.",
-    "failed": "We could not read this photo. Try another one."
+    "failed": "We could not read this photo. Try another one.",
+    "dropHint": "Drop a leaf photo here",
+    "dropActive": "Release to scan this photo",
+    "notImage": "Please choose a photo (JPG or PNG)."
   },
   "result": {
     "title": "Result",
@@ -225,5 +233,11 @@
     "weatherCredit": "Weather data: Open-Meteo.com",
     "disclaimer": "Agrixore gives advisory information only. It does not replace an agriculture expert.",
     "myLocation": "My location"
+  },
+  "install": {
+    "title": "Install Agrixore",
+    "body": "Add it to your home screen to open it quickly and use it without internet.",
+    "action": "Install",
+    "dismiss": "Not now"
   }
 }

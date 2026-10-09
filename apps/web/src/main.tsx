@@ -6,6 +6,7 @@ import { createRoot } from 'react-dom/client';
 import { initI18n } from './i18n';
 import { useSettings } from './db/settings';
 import { App } from './app/App';
+import './lib/install';
 
 async function boot() {
   await useSettings.getState().load();

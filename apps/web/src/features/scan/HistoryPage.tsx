@@ -21,7 +21,7 @@ export function HistoryPage() {
 
   return (
     <section className="space-y-4 pt-2">
-      <h1 className="text-2xl font-bold text-canopy">{t('history.title')}</h1>
+      <h1 className="text-2xl font-bold text-canopy lg:text-3xl">{t('history.title')}</h1>
 
       <div className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1">
         <Chip selected={filter === 'all'} onClick={() => setFilter('all')}>{t('history.all')}</Chip>
@@ -39,10 +39,10 @@ export function HistoryPage() {
         </div>
       )}
 
-      <ul className="space-y-3">
+      <ul className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
         {visible.map((s) => (
           <li key={s.id}>
-            <Link to={`/result/${s.id}`} className="flex items-center gap-3 rounded-2xl border border-line bg-surface p-3">
+            <Link to={`/result/${s.id}`} className="flex items-center gap-3 rounded-2xl border border-line bg-surface p-3 transition-colors hover:border-leaf">
               <BlobImage blob={s.thumbnail} alt="" className="size-16 shrink-0 rounded-xl bg-tint object-cover" />
               <div className="min-w-0 flex-1">
                 <p className="truncate font-semibold text-canopy">{scanHeadline(s.state, s.topClassId, lang, t)}</p>
