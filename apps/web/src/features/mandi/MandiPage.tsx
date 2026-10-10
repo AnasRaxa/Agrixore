@@ -58,8 +58,8 @@ export function MandiPage() {
         </Notice>
       ))}
 
-      <div className="grid gap-4 lg:grid-cols-[18rem_minmax(0,1fr)] lg:grid-rows-[auto_1fr] lg:items-start lg:gap-x-10 lg:gap-y-8">
-      <div className="space-y-4 lg:col-start-1 lg:row-start-1">
+      <div className="grid grid-cols-1 gap-4 lg:grid-cols-[18rem_minmax(0,1fr)] lg:grid-rows-[auto_1fr] lg:items-start lg:gap-x-10 lg:gap-y-8">
+      <div className="min-w-0 space-y-4 lg:col-start-1 lg:row-start-1">
       <div className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1 lg:mx-0 lg:flex-wrap lg:overflow-visible lg:px-0">
         {COMMODITIES.map((c) => <Chip key={c} selected={commodity === c} onClick={() => setCommodity(c)}>{t(`mandi.commodity.${c}`)}</Chip>)}
       </div>
@@ -73,18 +73,18 @@ export function MandiPage() {
       </label>
       </div>
 
-      <div className="lg:col-start-2 lg:row-span-2 lg:row-start-1">
+      <div className="min-w-0 lg:col-start-2 lg:row-span-2 lg:row-start-1">
       {visible.length === 0 && <p className="py-6 text-center text-muted">{t('mandi.empty')}</p>}
 
-      <ul className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+      <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3">
         {visible.map((r) => (
-          <li key={rowKey(r)} className="rounded-2xl border border-line bg-surface p-4 lg:p-5">
+          <li key={rowKey(r)} className="min-w-0 rounded-2xl border border-line bg-surface p-4 lg:p-5">
             <div className="flex items-start justify-between gap-3">
-              <div>
-                <p className="font-semibold text-canopy">{districtName(r.districtId)}</p>
+              <div className="min-w-0">
+                <p className="break-words font-semibold text-canopy">{districtName(r.districtId)}</p>
                 <p className="text-sm text-muted">{r.marketDate ? t('mandi.marketDate', { date: formatDate(r.marketDate, lang) }) : t('mandi.sample')}</p>
               </div>
-              <div className="text-end">
+              <div className="shrink-0 text-end">
                 <p className="text-2xl font-bold tabular-nums text-leaf">{formatNumber(r.modal, lang)}</p>
                 <p className="text-xs text-muted">{t('mandi.modal')}</p>
               </div>
@@ -97,7 +97,7 @@ export function MandiPage() {
 
             {alertFor === rowKey(r) ? (
               <div className="mt-3 space-y-3">
-                <div className="flex gap-2">
+                <div className="flex flex-wrap gap-2">
                   <Chip selected={direction === 'above'} onClick={() => setDirection('above')}>{t('mandi.alertAbove')}</Chip>
                   <Chip selected={direction === 'below'} onClick={() => setDirection('below')}>{t('mandi.alertBelow')}</Chip>
                 </div>
@@ -129,7 +129,7 @@ export function MandiPage() {
       </ul>
       </div>
 
-      <div className="lg:col-start-1 lg:row-start-2">
+      <div className="min-w-0 lg:col-start-1 lg:row-start-2">
         <h2 className="mb-2 font-semibold">{t('mandi.yourAlerts')}</h2>
         {targets.length === 0 ? (
           <p className="text-muted">{t('mandi.noAlerts')}</p>
@@ -137,7 +137,7 @@ export function MandiPage() {
           <ul className="space-y-2">
             {targets.map((tg) => (
               <li key={tg.id} className="flex items-center justify-between gap-3 rounded-2xl border border-line bg-surface px-4 py-3">
-                <span>
+                <span className="min-w-0">
                   {t(`mandi.commodity.${tg.commodityId}`)}, {districtName(tg.district)}
                   <span className="block text-sm text-muted">
                     {tg.direction === 'above' ? t('mandi.alertAbove') : t('mandi.alertBelow')} {formatNumber(tg.target, lang)}
