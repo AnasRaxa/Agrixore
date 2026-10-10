@@ -22,6 +22,10 @@ pnpm dev               # http://localhost:5173
 pnpm lint && pnpm typecheck && pnpm test && pnpm build
 ```
 
+## Deployment
+
+The frontend deploys to Vercel from GitHub Actions: PRs get a preview URL, merges to `main` go to production. Setup: [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md).
+
 ## Repository layout
 
 ```
