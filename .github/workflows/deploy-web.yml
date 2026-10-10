@@ -1,0 +1,118 @@
+name: Deploy web (Vercel)
+
+# Frontend only. Pull requests get a preview URL, pushes to main go to production.
+# Needs three repository secrets: VERCEL_TOKEN, VERCEL_ORG_ID, VERCEL_PROJECT_ID (see docs/DEPLOYMENT.md).
+on:
+  push:
+    branches: [main]
+    paths:
+      - "apps/web/**"
+      - "packages/shared/**"
+      - "content/**"
+      - "package.json"
+      - "pnpm-lock.yaml"
+      - "pnpm-workspace.yaml"
+      - "tsconfig.base.json"
+      - ".nvmrc"
+      - "vercel.json"
+      - ".github/workflows/deploy-web.yml"
+  pull_request:
+    paths:
+      - "apps/web/**"
+      - "packages/shared/**"
+      - "content/**"
+      - "package.json"
+      - "pnpm-lock.yaml"
+      - "pnpm-workspace.yaml"
+      - "tsconfig.base.json"
+      - ".nvmrc"
+      - "vercel.json"
+      - ".github/workflows/deploy-web.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-web-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+env:
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+  VERCEL_CLI_VERSION: "60.1.1"
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint
+      - run: pnpm typecheck
+      - run: pnpm test
+      - run: pnpm content:validate
+
+  deploy:
+    needs: check
+    runs-on: ubuntu-latest
+    # Fork PRs cannot read secrets, so they are skipped here (CI still runs for them).
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+    permissions:
+      contents: read
+      pull-requests: write
+    env:
+      IS_PROD: ${{ github.event_name != 'pull_request' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+
+      - name: Check Vercel secrets are set
+        run: |
+          for v in VERCEL_TOKEN VERCEL_ORG_ID VERCEL_PROJECT_ID; do
+            if [ -z "${!v}" ]; then echo "::error::Missing repository secret $v (see docs/DEPLOYMENT.md)"; exit 1; fi
+          done
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+
+      - name: Pull Vercel project settings
+        run: |
+          if [ "$IS_PROD" = "true" ]; then ENV=production; else ENV=preview; fi
+          pnpm dlx vercel@${VERCEL_CLI_VERSION} pull --yes --environment=$ENV --token="$VERCEL_TOKEN"
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+
+      - name: Build
+        run: |
+          if [ "$IS_PROD" = "true" ]; then FLAG=--prod; else FLAG=""; fi
+          pnpm dlx vercel@${VERCEL_CLI_VERSION} build $FLAG --token="$VERCEL_TOKEN"
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+
+      - name: Deploy
+        id: deploy
+        run: |
+          if [ "$IS_PROD" = "true" ]; then FLAG=--prod; else FLAG=""; fi
+          URL=$(pnpm dlx vercel@${VERCEL_CLI_VERSION} deploy --prebuilt $FLAG --token="$VERCEL_TOKEN" | tail -n 1)
+          echo "url=$URL" >> "$GITHUB_OUTPUT"
+          echo "### Deployed: $URL" >> "$GITHUB_STEP_SUMMARY"
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+
+      - name: Comment preview URL on the PR
+        if: github.event_name == 'pull_request'
+        run: gh pr comment "$PR" --edit-last --create-if-none --body "Preview deployment - $PREVIEW_URL"
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR: ${{ github.event.pull_request.number }}
+          PREVIEW_URL: ${{ steps.deploy.outputs.url }}
