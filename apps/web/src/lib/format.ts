@@ -19,6 +19,11 @@ export function formatDate(isoDate: string, lang: Lang): string {
   return new Intl.DateTimeFormat(LOCALES[lang], { day: 'numeric', month: 'short', year: 'numeric' }).format(new Date(`${isoDate}T12:00:00`));
 }
 
+/** Today's date (YYYY-MM-DD) in Pakistan, the same time zone the forecast is requested in. */
+export function todayInKarachi(now: Date = new Date()): string {
+  return new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Karachi' }).format(now);
+}
+
 export function isStale(fetchedAt: number, hours: number): boolean {
   return Date.now() - fetchedAt > hours * 3_600_000;
 }

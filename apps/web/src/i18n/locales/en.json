@@ -157,10 +157,15 @@
     "sevenDay": "Next 7 days",
     "irrigation": "Irrigation advice",
     "advice": {
-      "skip": "Rain is likely soon. You can skip watering today.",
-      "hot": "It will be very hot. Water early in the morning or in the evening.",
-      "usual": "No rain expected. Irrigate as usual."
+      "rainingNow": "It is raining now. Skip watering today.",
+      "skipToday": "Rain is expected today ({{prob}}% chance, about {{mm}} mm). Skip watering today.",
+      "skipTomorrow": "Rain is expected tomorrow ({{prob}}% chance, about {{mm}} mm). Hold off watering today.",
+      "hot": "Very hot today (up to {{temp}}°). Water early in the morning or in the evening.",
+      "rainPossible": "Rain is possible ({{prob}}% chance) but not certain. Look at the sky before you water.",
+      "cool": "Cool weather today (up to {{temp}}°). Plants use less water, so you may need to water less than usual.",
+      "usual": "Little chance of rain ({{prob}}%). Irrigate as usual."
     },
+    "adviceUnavailable": "Irrigation advice needs a fresh forecast. Connect to the internet to update it.",
     "alert": {
       "heavyRain": "Heavy rain expected {{day}}",
       "frost": "Frost possible {{day}}",

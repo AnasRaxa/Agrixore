@@ -13,6 +13,8 @@ export interface Forecast {
   daily: DailyForecast[];
 }
 
-export type IrrigationAdvice = 'skip' | 'hot' | 'usual';
+export type IrrigationKind = 'rainingNow' | 'skipToday' | 'skipTomorrow' | 'hot' | 'rainPossible' | 'cool' | 'usual';
+/** The advice plus the forecast numbers it was based on, so the screen can show why. */
+export interface IrrigationAdvice { kind: IrrigationKind; tMax: number; rainProb: number; rainMm: number }
 export interface WeatherAlert { type: 'heavyRain' | 'frost' | 'heatwave'; date: string }
 export type ConditionKey = 'clear' | 'partly' | 'cloudy' | 'fog' | 'drizzle' | 'rain' | 'snow' | 'storm';
