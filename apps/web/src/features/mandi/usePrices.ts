@@ -1,14 +1,15 @@
 import { useLiveQuery } from 'dexie-react-hooks';
 import { useQuery } from '@tanstack/react-query';
+import type { ApiEnvelope, MandiPriceDto } from '@agrixore/shared';
 import { db } from '../../db/db';
 import { useOnline } from '../../lib/online';
 import { SAMPLE_ROWS } from './sample';
 import type { PriceRow } from './types';
 
-/** TODO(owner): align with the real API response once apps/api exists (ARCHITECTURE.md section 8.4). */
-interface ApiPriceRow { commodityId: string; district: string; min: number; modal: number; max: number; marketDate: string }
-
-/** Offline-first. Without a backend (no VITE_API_BASE_URL) the screen shows clearly labelled sample data. */
+/**
+ * Offline-first. Without a backend (no VITE_API_BASE_URL) the screen shows clearly labelled sample data.
+ * With a backend, the API flags its own preview rows (sample: true) and the screen labels those too.
+ */
 export function usePrices() {
   const online = useOnline();
   const apiBase = import.meta.env.VITE_API_BASE_URL;
@@ -20,11 +21,11 @@ export function usePrices() {
     staleTime: 30 * 60_000,
     retry: 1,
     queryFn: async ({ signal }) => {
-      const res = await fetch(`${apiBase}/api/v1/mandi/prices`, { signal });
+      const res = await fetch(`${apiBase}/api/v1/mandi/prices/latest`, { signal });
       if (!res.ok) throw new Error(`Price request failed (${res.status})`);
-      const json = (await res.json()) as { data: ApiPriceRow[] };
+      const json = (await res.json()) as ApiEnvelope<MandiPriceDto[]>;
       const rows: PriceRow[] = json.data.map((r) => ({
-        commodityId: r.commodityId, districtId: r.district, min: r.min, modal: r.modal, max: r.max, marketDate: r.marketDate, sample: false,
+        commodityId: r.commodityId, districtId: r.districtId, min: r.min, modal: r.modal, max: r.max, marketDate: r.marketDate, sample: r.sample,
       }));
       await db.priceCache.put({ queryKey: 'all', rows, fetchedAt: Date.now() });
       return true;
@@ -32,10 +33,11 @@ export function usePrices() {
   });
 
   const record = cached?.record;
+  const rows = record?.rows ?? SAMPLE_ROWS;
   return {
-    rows: record?.rows ?? SAMPLE_ROWS,
+    rows,
     fetchedAt: record?.fetchedAt ?? null,
-    isSample: !record,
+    isSample: rows.some((r) => r.sample),
     online,
     isError: query.isError,
   };

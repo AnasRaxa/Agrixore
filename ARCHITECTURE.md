@@ -328,6 +328,7 @@ Modular monolith. Each module under `src/modules/<name>/` has: `routes.ts` → `
 | GET | `/mandi/commodities` | none | P1 | List commodities |
 | GET | `/mandi/markets?province=&district=` | none | P1 | List markets |
 | GET | `/mandi/prices?commodity=&province=&district=&market=&from=&to=` | none | P1 | Price rows and `marketDate` |
+| GET | `/mandi/prices/latest?commodity=&district=&market=` | none | P1 | Newest row per commodity + market (what the app loads). Rows carry `sample` and `source`; clients must label `sample: true` rows and never alert on them |
 | PUT | `/devices/:deviceId/preferences` | device | P3 | Save district, crops, alert opt-ins |
 | POST / DELETE | `/push/subscriptions` | device | P3 | Register / remove web push subscription |
 | GET / POST / DELETE | `/alerts/price-targets` | device | P3 | Server-side price targets |
@@ -341,6 +342,8 @@ Modular monolith. Each module under `src/modules/<name>/` has: `routes.ts` → `
 | CRUD | `/admin/diseases`, `/admin/prices/import`, `/admin/alerts/broadcast`, `/admin/models`, `/admin/feedback` | admin | P3 | Management |
 
 Paginate list endpoints; return `ETag`/`Cache-Control` where useful.
+
+**Implementation notes (apps/api, built):** request schemas live in each module (`schema.ts`); shared holds DTO types only (keeps zod out of the web bundle). Without `MONGODB_URI` the API uses an in-memory repo (sample data in development, empty in production); with it, `MongoMandiRepo` is used. `MANDI_SEED_SAMPLE` can never be true in production.
 
 ### 8.5 Scheduled jobs (`node-cron`)
 | Job | Schedule | Action |
