@@ -10,6 +10,7 @@ import { cn } from '../../lib/cn';
 import { Viewfinder } from '../../components/Viewfinder';
 import { useSettings } from '../../db/settings';
 import { analyzeAndSave } from './analyze';
+import { PhotoRejectedError, type PhotoProblem } from './photoCheck';
 
 export function ScanPage() {
   const { t } = useTranslation();
@@ -22,6 +23,7 @@ export function ScanPage() {
   const [notImage, setNotImage] = useState(false);
   const [preview, setPreview] = useState<string | null>(null);
   const [failed, setFailed] = useState(false);
+  const [rejected, setRejected] = useState<PhotoProblem | null>(null);
   const cameraInput = useRef<HTMLInputElement>(null);
   const galleryInput = useRef<HTMLInputElement>(null);
 
@@ -30,6 +32,7 @@ export function ScanPage() {
   async function handleFile(file: File | undefined) {
     if (!file) return;
     setNotImage(false);
+    setRejected(null);
     if (!file.type.startsWith('image/')) { setNotImage(true); return; }
     setFailed(false);
     setPreview(URL.createObjectURL(file));
@@ -37,8 +40,9 @@ export function ScanPage() {
       const id = await analyzeAndSave(file, crop);
       void updateSettings({ lastCrop: crop });
       navigate(`/result/${id}`);
-    } catch {
-      setFailed(true);
+    } catch (error) {
+      if (error instanceof PhotoRejectedError) setRejected(error.problem);
+      else setFailed(true);
       setPreview(null);
     }
   }
@@ -79,6 +83,7 @@ export function ScanPage() {
         </div>
 
         {failed && <Notice tone="danger">{t('scan.failed')}</Notice>}
+        {rejected && <Notice tone="warn" title={t('scan.rejectedTitle')}>{t(`scan.rejected.${rejected}`)}</Notice>}
         {notImage && <Notice tone="warn">{t('scan.notImage')}</Notice>}
 
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
