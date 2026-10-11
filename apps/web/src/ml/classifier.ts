@@ -64,5 +64,5 @@ export async function classify(bitmap: ImageBitmap, crop: CropChoice, seed: numb
   }
   const res = await call(engine.worker, { type: 'infer', bitmap, crop }, [bitmap]);
   if (!res.ok || !res.predictions) throw new Error(res.ok ? 'No predictions' : res.error);
-  return { engine: 'onnx', modelVersion: engine.manifest.version, predictions: res.predictions, latencyMs: res.latencyMs ?? 0 };
+  return { engine: 'onnx', modelVersion: engine.manifest.version, experimental: engine.manifest.experimental, predictions: res.predictions, latencyMs: res.latencyMs ?? 0 };
 }

@@ -1,0 +1,83 @@
+{
+  "id": "maize_gray_leaf_spot",
+  "crop": "maize",
+  "kind": "disease",
+  "name": {
+    "en": "Gray leaf spot",
+    "ur": "گرے لیف اسپاٹ (سرمئی دھبے)"
+  },
+  "summary": {
+    "en": "A fungal disease that makes narrow, rectangular gray-tan spots between the leaf veins.",
+    "ur": "یہ پھپھوندی کی بیماری ہے جس میں پتے کی رگوں کے درمیان پتلے، چوکور سرمئی بھورے دھبے بنتے ہیں۔"
+  },
+  "symptoms": {
+    "en": [
+      "Rectangular tan to gray spots that run along the leaf veins.",
+      "Spots can join, and leaves may dry from the tip, usually the lower leaves first."
+    ],
+    "ur": [
+      "رگوں کے ساتھ چلتے ہوئے چوکور ہلکے بھورے سے سرمئی دھبے۔",
+      "دھبے آپس میں مل سکتے ہیں اور پتے سرے سے سوکھ سکتے ہیں، عموماً پہلے نچلے پتے۔"
+    ]
+  },
+  "spread": {
+    "en": "The fungus survives in crop residue and spreads by wind. Warm, humid weather with wet leaves favours it.",
+    "ur": "پھپھوندی فصل کی باقیات میں زندہ رہتی ہے اور ہوا سے پھیلتی ہے۔ گرم مرطوب موسم اور گیلے پتے اسے بڑھاتے ہیں۔"
+  },
+  "prevention": {
+    "en": [
+      "Rotate crops and bury or remove old corn residue.",
+      "Grow tolerant hybrids where available.",
+      "Avoid very dense planting that keeps leaves wet."
+    ],
+    "ur": [
+      "فصلوں کا ادل بدل کریں اور مکئی کی پرانی باقیات دبا دیں یا ہٹا دیں۔",
+      "جہاں دستیاب ہوں برداشت رکھنے والے ہائبرڈ لگائیں۔",
+      "بہت گھنی بوائی سے بچیں جس سے پتے گیلے رہتے ہیں۔"
+    ]
+  },
+  "treatment": {
+    "cultural": {
+      "en": [
+        "After harvest, destroy heavily infected crop residue."
+      ],
+      "ur": [
+        "کٹائی کے بعد شدید متاثرہ فصل کی باقیات کو تلف کر دیں۔"
+      ]
+    },
+    "organic": {
+      "en": [],
+      "ur": []
+    },
+    "chemical": [
+      {
+        "activeIngredient": "Foliar fungicide, only if advised by an agriculture expert",
+        "note": {
+          "en": "Used only when the attack is heavy. Ask your extension officer for the product and timing.",
+          "ur": "صرف شدید حملے میں استعمال ہوتا ہے۔ مصنوعات اور وقت کے لیے اپنے توسیعی افسر سے پوچھیں۔"
+        }
+      }
+    ]
+  },
+  "reviewStatus": "draft",
+  "sources": [],
+  "version": 1,
+  "safety": {
+    "en": [
+      "Read and follow the product label.",
+      "Wear gloves, a mask and long sleeves when spraying.",
+      "Do not spray near water sources, and keep children and animals away.",
+      "Respect the waiting period before harvest."
+    ],
+    "ur": [
+      "پروڈکٹ کے لیبل کو پڑھیں اور اس پر عمل کریں۔",
+      "سپرے کرتے وقت دستانے، ماسک اور پوری آستین والے کپڑے پہنیں۔",
+      "پانی کے ذرائع کے قریب سپرے نہ کریں اور بچوں اور جانوروں کو دور رکھیں۔",
+      "کٹائی سے پہلے انتظار کی مدت کا خیال رکھیں۔"
+    ]
+  },
+  "whenToCallExpert": {
+    "en": "If the problem spreads quickly or you are unsure, show the plant to your local agriculture extension officer.",
+    "ur": "اگر مسئلہ تیزی سے پھیلے یا آپ کو یقین نہ ہو تو پودا اپنے مقامی زرعی توسیعی افسر کو دکھائیں۔"
+  }
+}

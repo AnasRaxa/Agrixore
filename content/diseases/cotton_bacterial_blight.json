@@ -1,0 +1,85 @@
+{
+  "id": "cotton_bacterial_blight",
+  "crop": "cotton",
+  "kind": "disease",
+  "name": {
+    "en": "Bacterial blight (angular leaf spot)",
+    "ur": "بیکٹیریل بلائٹ (کونے دار دھبے)"
+  },
+  "summary": {
+    "en": "A bacterial disease that causes angular, water-soaked spots on cotton leaves that later turn brown.",
+    "ur": "یہ بیکٹیریا کی بیماری ہے جس میں کپاس کے پتوں پر کونے دار، پانی جیسے دھبے بنتے ہیں جو بعد میں بھورے ہو جاتے ہیں۔"
+  },
+  "symptoms": {
+    "en": [
+      "Small angular spots that look water-soaked and are limited by the leaf veins.",
+      "Spots turn brown or black. Severe attacks can reach stems and bolls."
+    ],
+    "ur": [
+      "چھوٹے کونے دار دھبے جو پانی جیسے لگتے ہیں اور رگوں تک محدود رہتے ہیں۔",
+      "دھبے بھورے یا کالے ہو جاتے ہیں۔ شدید حملہ تنے اور ٹینڈوں تک پہنچ سکتا ہے۔"
+    ]
+  },
+  "spread": {
+    "en": "Bacteria spread by infected seed, rain splash and field work when plants are wet. Warm, wet weather favours it.",
+    "ur": "بیکٹیریا متاثرہ بیج، بارش کے چھینٹوں اور پودوں کے گیلے ہونے پر کھیت میں کام سے پھیلتے ہیں۔ گرم گیلا موسم اسے بڑھاتا ہے۔"
+  },
+  "prevention": {
+    "en": [
+      "Use clean, certified seed from a trusted source.",
+      "Grow varieties recommended for your area.",
+      "Avoid working in the field when plants are wet.",
+      "Rotate crops and remove old crop residue."
+    ],
+    "ur": [
+      "قابل اعتماد ذریعے سے صاف، تصدیق شدہ بیج استعمال کریں۔",
+      "اپنے علاقے کے لیے تجویز کردہ اقسام لگائیں۔",
+      "جب پودے گیلے ہوں تو کھیت میں کام نہ کریں۔",
+      "فصلوں کا ادل بدل کریں اور پرانی باقیات ہٹا دیں۔"
+    ]
+  },
+  "treatment": {
+    "cultural": {
+      "en": [
+        "After harvest, remove and destroy badly infected plants and crop residue."
+      ],
+      "ur": [
+        "کٹائی کے بعد شدید متاثرہ پودوں اور فصل کی باقیات کو ہٹا کر تلف کر دیں۔"
+      ]
+    },
+    "organic": {
+      "en": [],
+      "ur": []
+    },
+    "chemical": [
+      {
+        "activeIngredient": "Copper-based product, only if advised by an agriculture expert",
+        "note": {
+          "en": "Copper sprays may slow the spread but do not cure infected tissue. Ask your extension officer for the product and timing.",
+          "ur": "کاپر والی دوا پھیلاؤ سست کر سکتی ہے لیکن متاثرہ حصے کا علاج نہیں کرتی۔ مصنوعات اور وقت کے لیے اپنے توسیعی افسر سے پوچھیں۔"
+        }
+      }
+    ]
+  },
+  "reviewStatus": "draft",
+  "sources": [],
+  "version": 1,
+  "safety": {
+    "en": [
+      "Read and follow the product label.",
+      "Wear gloves, a mask and long sleeves when spraying.",
+      "Do not spray near water sources, and keep children and animals away.",
+      "Respect the waiting period before harvest."
+    ],
+    "ur": [
+      "پروڈکٹ کے لیبل کو پڑھیں اور اس پر عمل کریں۔",
+      "سپرے کرتے وقت دستانے، ماسک اور پوری آستین والے کپڑے پہنیں۔",
+      "پانی کے ذرائع کے قریب سپرے نہ کریں اور بچوں اور جانوروں کو دور رکھیں۔",
+      "کٹائی سے پہلے انتظار کی مدت کا خیال رکھیں۔"
+    ]
+  },
+  "whenToCallExpert": {
+    "en": "If the problem spreads quickly or you are unsure, show the plant to your local agriculture extension officer.",
+    "ur": "اگر مسئلہ تیزی سے پھیلے یا آپ کو یقین نہ ہو تو پودا اپنے مقامی زرعی توسیعی افسر کو دکھائیں۔"
+  }
+}

@@ -33,7 +33,7 @@ export default defineConfig({
         ],
       },
       injectManifest: {
-        globPatterns: ['**/*.{js,css,html,svg,png,woff2,wasm,mjs,json}'],
+        globPatterns: ['**/*.{js,css,html,svg,png,woff2,wasm,mjs,json,onnx}'],
         maximumFileSizeToCacheInBytes: 40 * 1024 * 1024,
       },
     }),

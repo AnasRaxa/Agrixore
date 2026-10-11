@@ -2,6 +2,7 @@
 /// Single-threaded WASM on purpose: multi-threading needs cross-origin isolation headers.
 import * as ort from 'onnxruntime-web/wasm';
 import type { CropChoice, Prediction } from '@agrixore/shared';
+import { cropToTensor, resizeBilinear, shorterSideSize } from './preprocess';
 import type { ModelManifest, WorkerRequest, WorkerResponse } from './types';
 
 const post = (message: WorkerResponse) => (self as unknown as { postMessage(m: WorkerResponse): void }).postMessage(message);
@@ -16,19 +17,39 @@ async function init(baseUrl: string, modelBase: string, m: ModelManifest) {
   session = await ort.InferenceSession.create(`${modelBase}${m.modelFile ?? 'model.onnx'}`, { executionProviders: ['wasm'] });
 }
 
+/** Largest shorter side handed to the exact resize. Bigger photos are first shrunk by the browser (cheap, smooth). */
+const EXACT_RESIZE_CAP = 1024;
+
 function toTensor(bitmap: ImageBitmap, m: ModelManifest): ort.Tensor {
-  const { width, height, mean, std } = m.input;
-  const canvas = new OffscreenCanvas(width, height);
-  const ctx = canvas.getContext('2d');
-  if (!ctx) throw new Error('OffscreenCanvas is not available');
-  ctx.drawImage(bitmap, 0, 0, width, height);
-  const { data } = ctx.getImageData(0, 0, width, height);
-  const plane = width * height;
-  const out = new Float32Array(3 * plane);
-  for (let i = 0; i < plane; i++) {
-    for (let c = 0; c < 3; c++) out[c * plane + i] = (data[i * 4 + c] / 255 - mean[c]) / std[c];
+  const { width, height, mean, std, resizeShorterSide } = m.input;
+  let chw: Float32Array;
+  if (resizeShorterSide) {
+    // Same pipeline as training: Resize(shorter side) then CenterCrop, with Pillow-compatible resampling.
+    const shrink = Math.min(1, EXACT_RESIZE_CAP / Math.min(bitmap.width, bitmap.height));
+    const sw = Math.max(1, Math.round(bitmap.width * shrink));
+    const sh = Math.max(1, Math.round(bitmap.height * shrink));
+    const canvas = new OffscreenCanvas(sw, sh);
+    const ctx = canvas.getContext('2d', { willReadFrequently: true });
+    if (!ctx) throw new Error('OffscreenCanvas is not available');
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = 'high';
+    ctx.drawImage(bitmap, 0, 0, sw, sh);
+    const target = shorterSideSize(bitmap.width, bitmap.height, resizeShorterSide);
+    const resized = resizeBilinear(ctx.getImageData(0, 0, sw, sh).data, sw, sh, target.width, target.height);
+    chw = cropToTensor(resized, target.width, target.height, width, height, mean, std);
+  } else {
+    // No resize rule in the manifest: squash the whole photo to the model size.
+    const canvas = new OffscreenCanvas(width, height);
+    const ctx = canvas.getContext('2d', { willReadFrequently: true });
+    if (!ctx) throw new Error('OffscreenCanvas is not available');
+    ctx.imageSmoothingQuality = 'high';
+    ctx.drawImage(bitmap, 0, 0, width, height);
+    const { data } = ctx.getImageData(0, 0, width, height);
+    const plane = width * height;
+    chw = new Float32Array(3 * plane);
+    for (let i = 0; i < plane; i++) for (let c = 0; c < 3; c++) chw[c * plane + i] = (data[i * 4 + c] / 255 - mean[c]) / std[c];
   }
-  return new ort.Tensor('float32', out, [1, 3, height, width]);
+  return new ort.Tensor('float32', chw, [1, 3, height, width]);
 }
 
 /** Temperature-scaled softmax over the classes allowed for the chosen crop (+ the not-a-leaf class). */

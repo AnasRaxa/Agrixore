@@ -24,11 +24,11 @@ function Group({ title, children }: { title: string; children: ReactNode }) {
 export function SettingsPage() {
   const { t } = useTranslation();
   const s = useSettings();
-  const [modelVersion, setModelVersion] = useState<string | null | undefined>(undefined);
+  const [model, setModel] = useState<{ version: string; experimental: boolean } | null | undefined>(undefined);
 
   useEffect(() => {
     let active = true;
-    void readManifest().then((m) => { if (active) setModelVersion(m ? m.version : null); });
+    void readManifest().then((m) => { if (active) setModel(m ? { version: m.version, experimental: !!m.experimental } : null); });
     return () => { active = false; };
   }, []);
 
@@ -88,7 +88,7 @@ export function SettingsPage() {
       <Group title={t('settings.about')}>
         <div className="space-y-1 text-[0.95rem]">
           <p>{t('app.name')} · {t('settings.version', { version: APP_VERSION })}</p>
-          <p>{t('settings.model')}: {modelVersion === undefined ? t('common.loading') : modelVersion ? t('settings.modelInstalled', { version: modelVersion }) : t('settings.modelDemo')}</p>
+          <p>{t('settings.model')}: {model === undefined ? t('common.loading') : model ? t(model.experimental ? 'settings.modelExperimental' : 'settings.modelInstalled', { version: model.version }) : t('settings.modelDemo')}</p>
           <p className="text-muted">{t('settings.weatherCredit')}</p>
         </div>
         <Notice>{t('settings.disclaimer')}</Notice>

@@ -1,0 +1,79 @@
+{
+  "id": "cotton_fusarium_wilt",
+  "crop": "cotton",
+  "kind": "disease",
+  "name": {
+    "en": "Fusarium wilt",
+    "ur": "فیوزیریم مرجھاؤ (ولٹ)"
+  },
+  "summary": {
+    "en": "A soil-borne fungal disease that makes cotton plants turn yellow and wilt.",
+    "ur": "یہ مٹی سے لگنے والی پھپھوندی کی بیماری ہے جس سے کپاس کے پودے پیلے ہو کر مرجھا جاتے ہیں۔"
+  },
+  "symptoms": {
+    "en": [
+      "Leaves turn yellow and wilt, often starting on one side of the plant or on the lower leaves.",
+      "A cut stem shows brown streaks inside.",
+      "Whole plants may die."
+    ],
+    "ur": [
+      "پتے پیلے ہو کر مرجھا جاتے ہیں، اکثر پودے کی ایک طرف سے یا نچلے پتوں سے شروع ہو کر۔",
+      "تنا کاٹنے پر اندر بھوری لکیریں نظر آتی ہیں۔",
+      "پورا پودا مر سکتا ہے۔"
+    ]
+  },
+  "spread": {
+    "en": "The fungus lives in the soil for many years and enters through the roots. It spreads with soil, irrigation water and tools.",
+    "ur": "پھپھوندی کئی سال تک مٹی میں زندہ رہتی ہے اور جڑوں سے داخل ہوتی ہے۔ یہ مٹی، آبپاشی کے پانی اور اوزاروں سے پھیلتی ہے۔"
+  },
+  "prevention": {
+    "en": [
+      "Grow wilt-tolerant varieties recommended for your area.",
+      "Rotate crops. Avoid planting cotton again and again in the same infected field.",
+      "Keep the soil well drained and control pests that damage roots."
+    ],
+    "ur": [
+      "اپنے علاقے کے لیے تجویز کردہ مرجھاؤ برداشت کرنے والی اقسام لگائیں۔",
+      "فصلوں کا ادل بدل کریں۔ ایک ہی متاثرہ کھیت میں بار بار کپاس نہ لگائیں۔",
+      "مٹی کی نکاسی اچھی رکھیں اور جڑوں کو نقصان دینے والے کیڑوں پر قابو رکھیں۔"
+    ]
+  },
+  "treatment": {
+    "cultural": {
+      "en": [
+        "Uproot and destroy affected plants.",
+        "A leaf photo cannot confirm this disease. Check the stem and roots, and ask an expert. No spray cures an infected plant."
+      ],
+      "ur": [
+        "متاثرہ پودوں کو اکھاڑ کر تلف کر دیں۔",
+        "پتے کی تصویر سے اس بیماری کی تصدیق نہیں ہو سکتی۔ تنا اور جڑیں دیکھیں اور ماہر سے پوچھیں۔ کوئی سپرے متاثرہ پودے کا علاج نہیں کرتا۔"
+      ]
+    },
+    "organic": {
+      "en": [],
+      "ur": []
+    },
+    "chemical": []
+  },
+  "reviewStatus": "draft",
+  "sources": [],
+  "version": 1,
+  "safety": {
+    "en": [
+      "Read and follow the product label.",
+      "Wear gloves, a mask and long sleeves when spraying.",
+      "Do not spray near water sources, and keep children and animals away.",
+      "Respect the waiting period before harvest."
+    ],
+    "ur": [
+      "پروڈکٹ کے لیبل کو پڑھیں اور اس پر عمل کریں۔",
+      "سپرے کرتے وقت دستانے، ماسک اور پوری آستین والے کپڑے پہنیں۔",
+      "پانی کے ذرائع کے قریب سپرے نہ کریں اور بچوں اور جانوروں کو دور رکھیں۔",
+      "کٹائی سے پہلے انتظار کی مدت کا خیال رکھیں۔"
+    ]
+  },
+  "whenToCallExpert": {
+    "en": "Wilt is hard to confirm from a leaf photo. Show the plant, stem and roots to your local agriculture extension officer.",
+    "ur": "پتے کی تصویر سے مرجھاؤ کی تصدیق مشکل ہے۔ پودا، تنا اور جڑیں اپنے مقامی زرعی توسیعی افسر کو دکھائیں۔"
+  }
+}

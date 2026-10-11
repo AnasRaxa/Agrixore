@@ -1,0 +1,25 @@
+{
+  "raw_candidates": 6897,
+  "valid_after_conflict_quarantine": 6893,
+  "invalid": 0,
+  "conflicting_label_hashes_quarantined": 2,
+  "conflicting_label_records_quarantined": 4,
+  "same_label_exact_duplicates_removed": 119,
+  "final_images": 6774,
+  "near_duplicate_candidates_within_class": 1095,
+  "classes": [
+    "corn_healthy",
+    "corn_blight",
+    "corn_common_rust",
+    "corn_gray_leaf_spot",
+    "cotton_healthy",
+    "cotton_bacterial_blight",
+    "cotton_curl_virus",
+    "cotton_fusarium_wilt",
+    "wheat_healthy",
+    "wheat_yellow_rust",
+    "wheat_brown_rust",
+    "wheat_septoria",
+    "wheat_mildew"
+  ]
+}
