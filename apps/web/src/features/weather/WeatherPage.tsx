@@ -6,10 +6,10 @@ import { buttonClass } from '../../components/Button';
 import { Notice } from '../../components/Notice';
 import { WeatherIcon } from '../../components/WeatherIcon';
 import { useSettings } from '../../db/settings';
-import { formatNumber, formatTime, isStale } from '../../lib/format';
+import { formatNumber, formatTime, isStale, todayInKarachi } from '../../lib/format';
 import { cn } from '../../lib/cn';
 import { describeAlert, dayLabel } from './describeAlert';
-import { conditionFromCode, irrigationAdvice, weatherAlerts } from './rules';
+import { conditionFromCode, irrigationAdvice, isRainingCode, weatherAlerts } from './rules';
 import { useForecast } from './useForecast';
 
 export function WeatherPage() {
@@ -29,9 +29,13 @@ export function WeatherPage() {
   }
 
   const data = record?.data;
-  const advice = data ? irrigationAdvice(data.daily) : null;
-  const alerts = data ? weatherAlerts(data.daily) : [];
   const stale = record ? isStale(record.fetchedAt, STALE_AFTER_HOURS) : false;
+  const today = todayInKarachi();
+  // "Raining now" is only trusted while the current conditions are fresh.
+  const rainingNow = !!data && !!record && !isStale(record.fetchedAt, 3) && isRainingCode(data.current.code);
+  // Advice is only given from a forecast that is not out of date: an old forecast must not tell anyone to skip or do watering.
+  const advice = data && !stale ? irrigationAdvice(data.daily, today, { rainingNow }) : null;
+  const alerts = data ? weatherAlerts(data.daily, today) : [];
 
   return (
     <section className="space-y-4 pt-2">
@@ -76,14 +80,22 @@ export function WeatherPage() {
             </div>
 
             <div className="space-y-4 lg:col-span-3">
-              {advice && (
+              {advice ? (
                 <Notice
-                  tone={advice === 'hot' ? 'warn' : 'info'}
-                  icon={advice === 'hot' ? <Thermometer aria-hidden="true" className="size-6" /> : <Droplets aria-hidden="true" className="size-6" />}
+                  tone={advice.kind === 'hot' ? 'warn' : 'info'}
+                  icon={advice.kind === 'hot' ? <Thermometer aria-hidden="true" className="size-6" /> : <Droplets aria-hidden="true" className="size-6" />}
                   title={t('weather.irrigation')}
                   className="lg:p-6 lg:text-lg"
                 >
-                  {t(`weather.advice.${advice}`)}
+                  {t(`weather.advice.${advice.kind}`, {
+                    prob: formatNumber(advice.rainProb, lang),
+                    mm: formatNumber(advice.rainMm, lang, 1),
+                    temp: formatNumber(advice.tMax, lang),
+                  })}
+                </Notice>
+              ) : (
+                <Notice tone="warn" icon={<CloudOff aria-hidden="true" className="size-6" />} title={t('weather.irrigation')} className="lg:p-6 lg:text-lg">
+                  {t('weather.adviceUnavailable')}
                 </Notice>
               )}
               {alerts.map((a) => (
