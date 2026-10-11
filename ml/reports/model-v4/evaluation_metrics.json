@@ -1,0 +1,101 @@
+{
+  "test_accuracy": 0.9453125,
+  "test_macro_precision": 0.9235392571523651,
+  "test_macro_recall": 0.9158743316711503,
+  "test_macro_f1": 0.9181463329610372,
+  "best_epoch": 12,
+  "best_val_macro_f1": 0.9284640684360975,
+  "per_class": {
+    "corn_blight": {
+      "precision": 0.9230769230769231,
+      "recall": 0.9069767441860465,
+      "f1-score": 0.9149560117302052,
+      "support": 172.0
+    },
+    "corn_common_rust": {
+      "precision": 0.9845360824742269,
+      "recall": 0.9695431472081218,
+      "f1-score": 0.9769820971867008,
+      "support": 197.0
+    },
+    "corn_gray_leaf_spot": {
+      "precision": 0.7956989247311828,
+      "recall": 0.8604651162790697,
+      "f1-score": 0.8268156424581006,
+      "support": 86.0
+    },
+    "corn_healthy": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 175.0
+    },
+    "cotton_bacterial_blight": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 66.0
+    },
+    "cotton_curl_virus": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 59.0
+    },
+    "cotton_fusarium_wilt": {
+      "precision": 1.0,
+      "recall": 0.9655172413793104,
+      "f1-score": 0.9824561403508771,
+      "support": 58.0
+    },
+    "cotton_healthy": {
+      "precision": 0.9666666666666667,
+      "recall": 1.0,
+      "f1-score": 0.9830508474576272,
+      "support": 58.0
+    },
+    "wheat_brown_rust": {
+      "precision": 0.8571428571428571,
+      "recall": 0.9,
+      "f1-score": 0.8780487804878049,
+      "support": 20.0
+    },
+    "wheat_healthy": {
+      "precision": 0.8571428571428571,
+      "recall": 0.631578947368421,
+      "f1-score": 0.7272727272727273,
+      "support": 19.0
+    },
+    "wheat_mildew": {
+      "precision": 0.84,
+      "recall": 0.84,
+      "f1-score": 0.84,
+      "support": 25.0
+    },
+    "wheat_septoria": {
+      "precision": 0.8928571428571429,
+      "recall": 0.9433962264150944,
+      "f1-score": 0.9174311926605505,
+      "support": 53.0
+    },
+    "wheat_yellow_rust": {
+      "precision": 0.8888888888888888,
+      "recall": 0.8888888888888888,
+      "f1-score": 0.8888888888888888,
+      "support": 36.0
+    },
+    "accuracy": 0.9453125,
+    "macro avg": {
+      "precision": 0.9235392571523651,
+      "recall": 0.9158743316711503,
+      "f1-score": 0.9181463329610372,
+      "support": 1024.0
+    },
+    "weighted avg": {
+      "precision": 0.9462593879005876,
+      "recall": 0.9453125,
+      "f1-score": 0.9452602229947386,
+      "support": 1024.0
+    }
+  }
+}

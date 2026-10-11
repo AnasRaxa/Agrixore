@@ -8,10 +8,10 @@ Offline-first PWA for farmers in Pakistan: on-device crop disease detection (cor
 
 | Area | State |
 |---|---|
-| `apps/web` | Phase 1 frontend built. Disease detection runs in **demo mode** until a trained model is added (see `apps/web/public/models/README.md`) |
-| `apps/api` | Foundation built: config validation, health, mandi endpoints, tests. Runs with in-memory sample data; the MongoDB repo is written but not yet run against a real database |
-| `ml/` | Placeholder; dataset audit and training not started |
-| `content/` | Starter **draft** disease entries (not expert-reviewed) |
+| `apps/web` | Phase 1 frontend built. Disease detection uses the **experimental** v4 model (public-dataset accuracy only; see `ml/reports/model-v4/README.md`) |
+| `apps/api` | Not built yet (placeholder) |
+| `ml/` | v4 notebook, reports and manifest tooling. v5 (not_a_leaf class, calibration, field test set) not started |
+| `content/` | Draft entries for all 13 model classes (English + Urdu), **not expert-reviewed** |
 
 ## Run the frontend
 

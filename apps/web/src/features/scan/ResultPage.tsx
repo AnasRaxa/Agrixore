@@ -85,6 +85,12 @@ export function ResultPage() {
         <Viewfinder className="absolute inset-4 text-white/90" />
       </div>
 
+      {scan.engine === 'onnx' && scan.experimental && (
+        <Notice tone="warn" icon={<FlaskConical aria-hidden="true" className="size-5" />} title={t('result.experimentalTitle')}>
+          {t('result.experimentalBody')}
+        </Notice>
+      )}
+
       {scan.engine === 'demo' && (
         <Notice tone="warn" icon={<FlaskConical aria-hidden="true" className="size-5" />} title={t('result.demoTitle')}>
           {t('result.demoBody')}

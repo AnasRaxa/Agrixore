@@ -15,6 +15,8 @@ export interface ScanRecord {
   predictions: Prediction[];
   modelVersion: string;
   engine: 'onnx' | 'demo';
+  /** Model had no field validation when this scan was made. Shown as a notice on the result. */
+  experimental?: boolean;
   thumbnail: Blob;
   image: Blob;
 }

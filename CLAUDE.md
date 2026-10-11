@@ -162,6 +162,8 @@ Test the logic that matters most: confidence-to-state mapping, irrigation/alert 
 - Dexie: bump the schema version and write a migration for every change
 - Open-Meteo: set `timezone=Asia/Karachi`; verify parameter names in the current docs
 - Raw softmax is overconfident; keep calibration
+- Preprocessing must match training exactly. After ANY change to `src/ml/preprocess.ts`, the worker or the model, compare the app with `python ml/scripts/reference_predict.py <photo>` (agreement within about 1 point) and keep the Pillow fixture test passing
+- The model is experimental and has no `not_a_leaf` class: do not remove `photoCheck.ts` or the experimental notice until a v5 model with a negative class and field validation ships
 - `.safe-top` / `.safe-bottom` set padding in plain CSS, which beats Tailwind padding utilities. Use them only on a wrapper with no other padding classes
 
 ## 14. Local units cheat sheet (🟡 confirm with owner)

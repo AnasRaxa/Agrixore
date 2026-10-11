@@ -1,0 +1,83 @@
+{
+  "id": "wheat_mildew",
+  "crop": "wheat",
+  "kind": "disease",
+  "name": {
+    "en": "Powdery mildew",
+    "ur": "سفوفی پھپھوندی (پاؤڈری ملڈیو)"
+  },
+  "summary": {
+    "en": "A fungal disease that covers wheat leaves with white-gray powdery patches.",
+    "ur": "یہ پھپھوندی کی بیماری ہے جس میں گندم کے پتوں پر سفید سرمئی پاؤڈر جیسے دھبے بن جاتے ہیں۔"
+  },
+  "symptoms": {
+    "en": [
+      "White to gray powdery patches on leaves and stems.",
+      "Patches turn gray-brown with age, and leaves can yellow and dry."
+    ],
+    "ur": [
+      "پتوں اور تنوں پر سفید سے سرمئی پاؤڈر جیسے دھبے۔",
+      "وقت کے ساتھ دھبے سرمئی بھورے ہو جاتے ہیں اور پتے پیلے ہو کر سوکھ سکتے ہیں۔"
+    ]
+  },
+  "spread": {
+    "en": "Spores travel by wind. Cool, humid weather and dense, heavily fertilized crops favour it.",
+    "ur": "جراثیم ہوا سے پھیلتے ہیں۔ ٹھنڈا مرطوب موسم اور گھنی، زیادہ کھاد والی فصل اسے بڑھاتی ہے۔"
+  },
+  "prevention": {
+    "en": [
+      "Grow tolerant varieties recommended for your area.",
+      "Avoid very dense sowing and too much nitrogen fertilizer.",
+      "Check the field regularly in cool, humid weather."
+    ],
+    "ur": [
+      "اپنے علاقے کے لیے تجویز کردہ برداشت رکھنے والی اقسام لگائیں۔",
+      "بہت گھنی بوائی اور نائٹروجن کھاد کی زیادتی سے بچیں۔",
+      "ٹھنڈے مرطوب موسم میں کھیت کا باقاعدہ معائنہ کریں۔"
+    ]
+  },
+  "treatment": {
+    "cultural": {
+      "en": [
+        "Remove volunteer wheat and nearby grassy hosts."
+      ],
+      "ur": [
+        "خود اگنے والا گندم اور قریبی گھاس والے میزبان پودے ہٹا دیں۔"
+      ]
+    },
+    "organic": {
+      "en": [],
+      "ur": []
+    },
+    "chemical": [
+      {
+        "activeIngredient": "Foliar fungicide, only if advised by an agriculture expert",
+        "note": {
+          "en": "Used only when the attack is heavy. Ask your extension officer for the product and timing.",
+          "ur": "صرف شدید حملے میں استعمال ہوتا ہے۔ مصنوعات اور وقت کے لیے اپنے توسیعی افسر سے پوچھیں۔"
+        }
+      }
+    ]
+  },
+  "reviewStatus": "draft",
+  "sources": [],
+  "version": 1,
+  "safety": {
+    "en": [
+      "Read and follow the product label.",
+      "Wear gloves, a mask and long sleeves when spraying.",
+      "Do not spray near water sources, and keep children and animals away.",
+      "Respect the waiting period before harvest."
+    ],
+    "ur": [
+      "پروڈکٹ کے لیبل کو پڑھیں اور اس پر عمل کریں۔",
+      "سپرے کرتے وقت دستانے، ماسک اور پوری آستین والے کپڑے پہنیں۔",
+      "پانی کے ذرائع کے قریب سپرے نہ کریں اور بچوں اور جانوروں کو دور رکھیں۔",
+      "کٹائی سے پہلے انتظار کی مدت کا خیال رکھیں۔"
+    ]
+  },
+  "whenToCallExpert": {
+    "en": "If the problem spreads quickly or you are unsure, show the plant to your local agriculture extension officer.",
+    "ur": "اگر مسئلہ تیزی سے پھیلے یا آپ کو یقین نہ ہو تو پودا اپنے مقامی زرعی توسیعی افسر کو دکھائیں۔"
+  }
+}

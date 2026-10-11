@@ -5,9 +5,15 @@ export interface ClassInfo { index: number; id: string; crop: CropId | null; kin
 /** Mirrors ARCHITECTURE.md section 7.2. Class ids come from here, never hard-coded in the UI. */
 export interface ModelManifest {
   version: string;
+  /** true while the model has only been checked on public-dataset photos (no field validation). */
+  experimental?: boolean;
   architecture: string;
   modelFile?: string;
-  input: { width: number; height: number; layout: 'CHW'; mean: number[]; std: number[] };
+  /**
+   * resizeShorterSide: when set, preprocessing is "resize the shorter side, then center-crop width x height"
+   * exactly like training. When absent the whole photo is squashed to width x height.
+   */
+  input: { width: number; height: number; layout: 'CHW'; mean: number[]; std: number[]; resizeShorterSide?: number };
   temperature: number;
   classes: ClassInfo[];
 }
@@ -15,6 +21,7 @@ export interface ModelManifest {
 export interface InferenceResult {
   engine: 'onnx' | 'demo';
   modelVersion: string;
+  experimental?: boolean;
   predictions: Prediction[];
   latencyMs: number;
 }

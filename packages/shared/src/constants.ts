@@ -20,7 +20,13 @@ export const ALERT_THRESHOLDS = {
 export const IRRIGATION_THRESHOLDS = {
   skipRainProbabilityPct: 60,
   skipRainMm: 5,
+  /** Rain this likely only counts as "expected" if at least this many mm are forecast too (a 60% chance of a trace is not rain). */
+  skipRainMinMm: 1,
+  /** Chance of rain from which we say "possible" instead of "little chance". */
+  maybeRainProbabilityPct: 30,
   hotMaxC: 38,
+  /** At or below this daily maximum plants use less water. */
+  coolMaxC: 20,
 } as const;
 
 /** Cached data older than this is shown with a "may be out of date" warning. */

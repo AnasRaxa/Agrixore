@@ -227,7 +227,8 @@ Use versioned schemas with explicit migrations. Access only through repository f
 ```
 photo (Blob)
   → createImageBitmap (EXIF-aware)
-  → resize to model input (e.g. 224×224; exact size from manifest)
+  → resize shorter side to `input.resizeShorterSide` (256), center-crop to the model input (224×224), exactly like training;
+    resampling is Pillow-compatible (apps/web/src/ml/preprocess.ts), NOT the browser's canvas scaler
   → Float32 tensor, CHW, normalized with mean/std from manifest
   → ONNX Runtime Web (WASM, 1 thread) in a Web Worker
   → logits → temperature scaling (from manifest) → softmax
@@ -245,8 +246,9 @@ photo (Blob)
 {
   "version": "1.0.0",
   "createdAt": "ISO-8601",
-  "architecture": "mobilenetv3-large | efficientnet-lite0",
-  "input": { "width": 224, "height": 224, "layout": "CHW", "mean": [0,0,0], "std": [1,1,1] },
+  "experimental": true,
+  "architecture": "mobilenetv3-small",
+  "input": { "width": 224, "height": 224, "layout": "CHW", "mean": [0.485,0.456,0.406], "std": [0.229,0.224,0.225], "resizeShorterSide": 256 },
   "temperature": 1.0,
   "classes": [
     { "index": 0, "id": "maize_common_rust", "crop": "maize", "kind": "disease" },

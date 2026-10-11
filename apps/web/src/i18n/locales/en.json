@@ -81,7 +81,15 @@
     "failed": "We could not read this photo. Try another one.",
     "dropHint": "Drop a leaf photo here",
     "dropActive": "Release to scan this photo",
-    "notImage": "Please choose a photo (JPG or PNG)."
+    "notImage": "Please choose a photo (JPG or PNG).",
+    "rejectedTitle": "Please take another photo",
+    "rejected": {
+      "tooDark": "The photo is too dark. Take it in daylight.",
+      "tooBright": "The photo is too bright. Step into shade or avoid direct glare.",
+      "blank": "The photo looks empty. Fill the frame with one crop leaf.",
+      "noisy": "The photo is not clear. Hold the phone steady and try again.",
+      "noPlant": "We could not see a plant leaf in this photo. Take a clear photo of one crop leaf in daylight."
+    }
   },
   "result": {
     "title": "Result",
@@ -123,7 +131,9 @@
     "confirmDelete": "Delete this scan?",
     "notFound": "This scan was not found.",
     "shareText": "Agrixore: {{crop}}, {{headline}} ({{percent}}% sure). Advisory only.",
-    "model": "Model {{version}}"
+    "model": "Model {{version}}",
+    "experimentalTitle": "Experimental model",
+    "experimentalBody": "This model was trained on public photos and has not been tested on real farms yet. Use it as a guide and confirm with an expert."
   },
   "history": {
     "title": "Scan history",
@@ -147,10 +157,15 @@
     "sevenDay": "Next 7 days",
     "irrigation": "Irrigation advice",
     "advice": {
-      "skip": "Rain is likely soon. You can skip watering today.",
-      "hot": "It will be very hot. Water early in the morning or in the evening.",
-      "usual": "No rain expected. Irrigate as usual."
+      "rainingNow": "It is raining now. Skip watering today.",
+      "skipToday": "Rain is expected today ({{prob}}% chance, about {{mm}} mm). Skip watering today.",
+      "skipTomorrow": "Rain is expected tomorrow ({{prob}}% chance, about {{mm}} mm). Hold off watering today.",
+      "hot": "Very hot today (up to {{temp}}°). Water early in the morning or in the evening.",
+      "rainPossible": "Rain is possible ({{prob}}% chance) but not certain. Look at the sky before you water.",
+      "cool": "Cool weather today (up to {{temp}}°). Plants use less water, so you may need to water less than usual.",
+      "usual": "Little chance of rain ({{prob}}%). Irrigate as usual."
     },
+    "adviceUnavailable": "Irrigation advice needs a fresh forecast. Connect to the internet to update it.",
     "alert": {
       "heavyRain": "Heavy rain expected {{day}}",
       "frost": "Frost possible {{day}}",
@@ -232,7 +247,8 @@
     "modelInstalled": "Version {{version}}",
     "weatherCredit": "Weather data: Open-Meteo.com",
     "disclaimer": "Agrixore gives advisory information only. It does not replace an agriculture expert.",
-    "myLocation": "My location"
+    "myLocation": "My location",
+    "modelExperimental": "Version {{version}} (experimental)"
   },
   "install": {
     "title": "Install Agrixore",

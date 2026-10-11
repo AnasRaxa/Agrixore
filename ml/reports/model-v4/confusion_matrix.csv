@@ -1,0 +1,14 @@
+,corn_blight,corn_common_rust,corn_gray_leaf_spot,corn_healthy,cotton_bacterial_blight,cotton_curl_virus,cotton_fusarium_wilt,cotton_healthy,wheat_brown_rust,wheat_healthy,wheat_mildew,wheat_septoria,wheat_yellow_rust
+corn_blight,156,1,15,0,0,0,0,0,0,0,0,0,0
+corn_common_rust,1,191,4,0,0,0,0,0,1,0,0,0,0
+corn_gray_leaf_spot,11,1,74,0,0,0,0,0,0,0,0,0,0
+corn_healthy,0,0,0,175,0,0,0,0,0,0,0,0,0
+cotton_bacterial_blight,0,0,0,0,66,0,0,0,0,0,0,0,0
+cotton_curl_virus,0,0,0,0,0,59,0,0,0,0,0,0,0
+cotton_fusarium_wilt,0,0,0,0,0,0,56,2,0,0,0,0,0
+cotton_healthy,0,0,0,0,0,0,0,58,0,0,0,0,0
+wheat_brown_rust,0,0,0,0,0,0,0,0,18,0,0,0,2
+wheat_healthy,0,0,0,0,0,0,0,0,2,12,4,1,0
+wheat_mildew,0,0,0,0,0,0,0,0,0,2,21,2,0
+wheat_septoria,0,1,0,0,0,0,0,0,0,0,0,50,2
+wheat_yellow_rust,1,0,0,0,0,0,0,0,0,0,0,3,32

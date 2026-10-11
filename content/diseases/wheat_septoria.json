@@ -1,0 +1,83 @@
+{
+  "id": "wheat_septoria",
+  "crop": "wheat",
+  "kind": "disease",
+  "name": {
+    "en": "Septoria leaf blotch",
+    "ur": "سیپٹوریا پتوں کا دھبہ"
+  },
+  "summary": {
+    "en": "A fungal disease that makes yellow to brown blotches with tiny dark specks on wheat leaves.",
+    "ur": "یہ پھپھوندی کی بیماری ہے جس میں گندم کے پتوں پر پیلے سے بھورے دھبے بنتے ہیں جن میں چھوٹے کالے نقطے ہوتے ہیں۔"
+  },
+  "symptoms": {
+    "en": [
+      "Yellow to brown blotches that often start on the lower leaves.",
+      "Tiny dark specks can be seen inside the blotches."
+    ],
+    "ur": [
+      "پیلے سے بھورے دھبے جو اکثر نچلے پتوں سے شروع ہوتے ہیں۔",
+      "دھبوں کے اندر چھوٹے کالے نقطے نظر آ سکتے ہیں۔"
+    ]
+  },
+  "spread": {
+    "en": "The fungus survives on crop residue and spreads by rain splash. Cool, wet weather favours it.",
+    "ur": "پھپھوندی فصل کی باقیات پر زندہ رہتی ہے اور بارش کے چھینٹوں سے پھیلتی ہے۔ ٹھنڈا گیلا موسم اسے بڑھاتا ہے۔"
+  },
+  "prevention": {
+    "en": [
+      "Rotate crops and manage old wheat residue.",
+      "Grow tolerant varieties recommended for your area.",
+      "Avoid very dense sowing."
+    ],
+    "ur": [
+      "فصلوں کا ادل بدل کریں اور گندم کی پرانی باقیات کا انتظام کریں۔",
+      "اپنے علاقے کے لیے تجویز کردہ برداشت رکھنے والی اقسام لگائیں۔",
+      "بہت گھنی بوائی سے بچیں۔"
+    ]
+  },
+  "treatment": {
+    "cultural": {
+      "en": [
+        "After harvest, remove or bury heavily infected residue."
+      ],
+      "ur": [
+        "کٹائی کے بعد شدید متاثرہ باقیات کو ہٹا دیں یا دبا دیں۔"
+      ]
+    },
+    "organic": {
+      "en": [],
+      "ur": []
+    },
+    "chemical": [
+      {
+        "activeIngredient": "Foliar fungicide, only if advised by an agriculture expert",
+        "note": {
+          "en": "Used only when the attack is heavy. Ask your extension officer for the product and timing.",
+          "ur": "صرف شدید حملے میں استعمال ہوتا ہے۔ مصنوعات اور وقت کے لیے اپنے توسیعی افسر سے پوچھیں۔"
+        }
+      }
+    ]
+  },
+  "reviewStatus": "draft",
+  "sources": [],
+  "version": 1,
+  "safety": {
+    "en": [
+      "Read and follow the product label.",
+      "Wear gloves, a mask and long sleeves when spraying.",
+      "Do not spray near water sources, and keep children and animals away.",
+      "Respect the waiting period before harvest."
+    ],
+    "ur": [
+      "پروڈکٹ کے لیبل کو پڑھیں اور اس پر عمل کریں۔",
+      "سپرے کرتے وقت دستانے، ماسک اور پوری آستین والے کپڑے پہنیں۔",
+      "پانی کے ذرائع کے قریب سپرے نہ کریں اور بچوں اور جانوروں کو دور رکھیں۔",
+      "کٹائی سے پہلے انتظار کی مدت کا خیال رکھیں۔"
+    ]
+  },
+  "whenToCallExpert": {
+    "en": "If the problem spreads quickly or you are unsure, show the plant to your local agriculture extension officer.",
+    "ur": "اگر مسئلہ تیزی سے پھیلے یا آپ کو یقین نہ ہو تو پودا اپنے مقامی زرعی توسیعی افسر کو دکھائیں۔"
+  }
+}
