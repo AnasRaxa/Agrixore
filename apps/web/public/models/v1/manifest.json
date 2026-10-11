@@ -1,0 +1,109 @@
+{
+  "version": "0.4.0-experimental",
+  "experimental": true,
+  "architecture": "mobilenetv3-small",
+  "modelFile": "model.onnx",
+  "input": {
+    "width": 224,
+    "height": 224,
+    "layout": "CHW",
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ],
+    "resizeShorterSide": 256
+  },
+  "temperature": 1.0,
+  "classes": [
+    {
+      "index": 0,
+      "id": "maize_blight",
+      "crop": "maize",
+      "kind": "disease"
+    },
+    {
+      "index": 1,
+      "id": "maize_common_rust",
+      "crop": "maize",
+      "kind": "disease"
+    },
+    {
+      "index": 2,
+      "id": "maize_gray_leaf_spot",
+      "crop": "maize",
+      "kind": "disease"
+    },
+    {
+      "index": 3,
+      "id": "maize_healthy",
+      "crop": "maize",
+      "kind": "healthy"
+    },
+    {
+      "index": 4,
+      "id": "cotton_bacterial_blight",
+      "crop": "cotton",
+      "kind": "disease"
+    },
+    {
+      "index": 5,
+      "id": "cotton_leaf_curl_virus",
+      "crop": "cotton",
+      "kind": "virus"
+    },
+    {
+      "index": 6,
+      "id": "cotton_fusarium_wilt",
+      "crop": "cotton",
+      "kind": "disease"
+    },
+    {
+      "index": 7,
+      "id": "cotton_healthy",
+      "crop": "cotton",
+      "kind": "healthy"
+    },
+    {
+      "index": 8,
+      "id": "wheat_brown_rust",
+      "crop": "wheat",
+      "kind": "disease"
+    },
+    {
+      "index": 9,
+      "id": "wheat_healthy",
+      "crop": "wheat",
+      "kind": "healthy"
+    },
+    {
+      "index": 10,
+      "id": "wheat_mildew",
+      "crop": "wheat",
+      "kind": "disease"
+    },
+    {
+      "index": 11,
+      "id": "wheat_septoria",
+      "crop": "wheat",
+      "kind": "disease"
+    },
+    {
+      "index": 12,
+      "id": "wheat_yellow_rust",
+      "crop": "wheat",
+      "kind": "disease"
+    }
+  ],
+  "sha256": "9ceadd6a318d5a782a1b2179dfce136bbf77897fc86061f3a14d0f0efe221ba5",
+  "metrics": {
+    "testAccuracy": 0.9453,
+    "testMacroF1": 0.9181,
+    "note": "Public-dataset test split, not field photos. See ml/reports/model-v4/README.md"
+  }
+}

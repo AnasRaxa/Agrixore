@@ -1,0 +1,58 @@
+{
+  "model_name": "Agrixore MobileNetV3-Small",
+  "model_file": "model.onnx",
+  "input_name": "images",
+  "output_name": "logits",
+  "input_layout": "NCHW",
+  "input_dtype": "float32",
+  "input_color": "RGB",
+  "input_size": [
+    224,
+    224
+  ],
+  "resize_shorter_side": 256,
+  "center_crop": [
+    224,
+    224
+  ],
+  "normalization": {
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ]
+  },
+  "class_names": [
+    "corn_blight",
+    "corn_common_rust",
+    "corn_gray_leaf_spot",
+    "corn_healthy",
+    "cotton_bacterial_blight",
+    "cotton_curl_virus",
+    "cotton_fusarium_wilt",
+    "cotton_healthy",
+    "wheat_brown_rust",
+    "wheat_healthy",
+    "wheat_mildew",
+    "wheat_septoria",
+    "wheat_yellow_rust"
+  ],
+  "output_semantics": "logits; apply softmax for probabilities",
+  "best_epoch": 12,
+  "best_validation_macro_f1": 0.9284640684360975,
+  "test_metrics": {
+    "test_accuracy": 0.9453125,
+    "test_macro_precision": 0.9235392571523651,
+    "test_macro_recall": 0.9158743316711503,
+    "test_macro_f1": 0.9181463329610372,
+    "best_epoch": 12,
+    "best_val_macro_f1": 0.9284640684360975
+  },
+  "onnx_max_abs_logit_difference": 0.00027298927307128906,
+  "limitations": "Predictions are limited to the listed classes and training-data domain. Confidence is not a calibrated probability of real-world correctness; request expert review for uncertain or severe cases."
+}
