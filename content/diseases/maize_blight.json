@@ -1,0 +1,83 @@
+{
+  "id": "maize_blight",
+  "crop": "maize",
+  "kind": "disease",
+  "name": {
+    "en": "Leaf blight (northern leaf blight)",
+    "ur": "پتوں کا جھلساؤ (بلائٹ)"
+  },
+  "summary": {
+    "en": "A fungal disease that makes long, narrow, gray-green to tan lesions on corn leaves.",
+    "ur": "یہ پھپھوندی کی بیماری ہے جس میں مکئی کے پتوں پر لمبے، پتلے، سرمئی سبز سے ہلکے بھورے دھبے بنتے ہیں۔"
+  },
+  "symptoms": {
+    "en": [
+      "Long, cigar-shaped gray-green or tan lesions, often several centimetres long.",
+      "Lesions can join and dry large parts of the leaf in a heavy attack."
+    ],
+    "ur": [
+      "لمبے، سگار جیسی شکل کے سرمئی سبز یا ہلکے بھورے دھبے، اکثر کئی سینٹی میٹر لمبے۔",
+      "شدید حملے میں دھبے آپس میں مل کر پتے کے بڑے حصے کو سکھا سکتے ہیں۔"
+    ]
+  },
+  "spread": {
+    "en": "Spores spread by wind and rain splash from infected crop residue. Moderate temperatures and long periods of humidity or wet leaves favour it.",
+    "ur": "جراثیم ہوا اور بارش کے چھینٹوں سے متاثرہ فصل کی باقیات سے پھیلتے ہیں۔ معتدل درجہ حرارت اور دیر تک نمی یا گیلے پتے اسے بڑھاتے ہیں۔"
+  },
+  "prevention": {
+    "en": [
+      "Use tolerant or resistant hybrids where available.",
+      "Rotate with a non-cereal crop and bury or remove old crop residue.",
+      "Avoid very dense sowing and check the field regularly in humid weather."
+    ],
+    "ur": [
+      "جہاں دستیاب ہوں برداشت رکھنے والے یا مزاحم ہائبرڈ استعمال کریں۔",
+      "غیر اناجی فصل کے ساتھ ادل بدل کریں اور پرانی فصل کی باقیات دبا دیں یا ہٹا دیں۔",
+      "بہت گھنی بوائی سے بچیں اور مرطوب موسم میں کھیت کا باقاعدہ معائنہ کریں۔"
+    ]
+  },
+  "treatment": {
+    "cultural": {
+      "en": [
+        "After harvest, remove and destroy heavily infected crop residue."
+      ],
+      "ur": [
+        "کٹائی کے بعد شدید متاثرہ فصل کی باقیات کو ہٹا کر تلف کر دیں۔"
+      ]
+    },
+    "organic": {
+      "en": [],
+      "ur": []
+    },
+    "chemical": [
+      {
+        "activeIngredient": "Foliar fungicide, only if advised by an agriculture expert",
+        "note": {
+          "en": "Used only when the attack is heavy. Ask your extension officer for the product and timing.",
+          "ur": "صرف شدید حملے میں استعمال ہوتا ہے۔ مصنوعات اور وقت کے لیے اپنے توسیعی افسر سے پوچھیں۔"
+        }
+      }
+    ]
+  },
+  "reviewStatus": "draft",
+  "sources": [],
+  "version": 1,
+  "safety": {
+    "en": [
+      "Read and follow the product label.",
+      "Wear gloves, a mask and long sleeves when spraying.",
+      "Do not spray near water sources, and keep children and animals away.",
+      "Respect the waiting period before harvest."
+    ],
+    "ur": [
+      "پروڈکٹ کے لیبل کو پڑھیں اور اس پر عمل کریں۔",
+      "سپرے کرتے وقت دستانے، ماسک اور پوری آستین والے کپڑے پہنیں۔",
+      "پانی کے ذرائع کے قریب سپرے نہ کریں اور بچوں اور جانوروں کو دور رکھیں۔",
+      "کٹائی سے پہلے انتظار کی مدت کا خیال رکھیں۔"
+    ]
+  },
+  "whenToCallExpert": {
+    "en": "If the problem spreads quickly or you are unsure, show the plant to your local agriculture extension officer.",
+    "ur": "اگر مسئلہ تیزی سے پھیلے یا آپ کو یقین نہ ہو تو پودا اپنے مقامی زرعی توسیعی افسر کو دکھائیں۔"
+  }
+}
