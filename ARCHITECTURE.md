@@ -294,7 +294,7 @@ Modular monolith. Each module under `src/modules/<name>/` has: `routes.ts` → `
 | `model` | P3 | Latest model version/manifest for OTA |
 | `outbreak` | P3 | Opt-in reports and aggregated map |
 | `feedback` | P3 | Opt-in feedback uploads and review queue |
-| `admin` | P3 | Admin auth and management endpoints |
+| `admin` | P1 (auth + manual prices) → P3 (rest) | Admin auth and management endpoints |
 | `inference` | P3 (optional) | Cloud second opinion |
 
 ### 8.2 Conventions
@@ -344,6 +344,13 @@ Modular monolith. Each module under `src/modules/<name>/` has: `routes.ts` → `
 Paginate list endpoints; return `ETag`/`Cache-Control` where useful.
 
 **Implementation notes (apps/api, built):** request schemas live in each module (`schema.ts`); shared holds DTO types only (keeps zod out of the web bundle). Without `MONGODB_URI` the API uses an in-memory repo (sample data in development, empty in production); with it, `MongoMandiRepo` is used. `MANDI_SEED_SAMPLE` can never be true in production.
+
+**Implementation notes (admin dashboard and manual mandi prices):** setup, deployment and the endpoint list are in `docs/ADMIN_AND_API.md`. Where it differs from the plan above:
+- Manual prices are written to the same `mandiPrices` store the farmer app reads, with `source: "manual"` and `sample: false`. Each district has one district-wide market, id `<district>-manual`. The stores implement `MandiAdminRepo` (`modules/admin/priceRepo.ts`) next to `MandiRepo`.
+- Admin passwords use **scrypt** (built into Node) instead of argon2 or bcrypt, to avoid a native add-on. The session is a signed JWT in an `HttpOnly`, `SameSite=Strict` cookie limited to `/api/v1/admin`; data-changing requests must come from the same site.
+- The dashboard is on only when `JWT_SECRET` is set. With a database, accounts are created with `pnpm --filter @agrixore/api admin:create` (no public sign-up). Without a database, `ADMIN_DEV_EMAIL` / `ADMIN_DEV_PASSWORD` provide an in-memory admin for development (refused in production).
+- The API serves the built dashboard at `/admin/` so the cookie stays first-party and only one service is deployed.
+- Validation schemas (zod) live in `apps/api`; `packages/shared` holds only types, constants and the dependency-free `validatePriceValues` rule that both the API and the dashboard use.
 
 ### 8.5 Scheduled jobs (`node-cron`)
 | Job | Schedule | Action |

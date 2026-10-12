@@ -29,3 +29,27 @@ describe('loadConfig', () => {
     expect(loadConfig({ CORS_ORIGINS: 'https://a.example, https://b.example' }).corsOrigins).toEqual(['https://a.example', 'https://b.example']);
   });
 });
+
+describe('admin settings', () => {
+  const secret = 'x'.repeat(32);
+  it('leaves the admin dashboard off unless JWT_SECRET is set', () => {
+    expect(loadConfig({}).jwtSecret).toBeUndefined();
+    expect(loadConfig({ JWT_SECRET: secret }).jwtSecret).toBe(secret);
+  });
+  it('rejects a short JWT_SECRET', () => {
+    expect(() => loadConfig({ JWT_SECRET: 'short' })).toThrow(/JWT_SECRET/);
+  });
+  it('makes the sign-in cookie Secure in production unless overridden', () => {
+    expect(loadConfig({ NODE_ENV: 'production', MONGODB_URI: 'mongodb://x' }).cookieSecure).toBe(true);
+    expect(loadConfig({ NODE_ENV: 'production', MONGODB_URI: 'mongodb://x', COOKIE_SECURE: 'false' }).cookieSecure).toBe(false);
+    expect(loadConfig({}).cookieSecure).toBe(false);
+  });
+  it('accepts a development admin only without a database and never in production', () => {
+    const dev = { ADMIN_DEV_EMAIL: 'Dev@Example.com', ADMIN_DEV_PASSWORD: 'a long dev password' };
+    expect(loadConfig({ JWT_SECRET: secret, ...dev }).devAdmin).toEqual({ email: 'dev@example.com', password: 'a long dev password' });
+    expect(() => loadConfig({ ...dev, MONGODB_URI: 'mongodb://x' })).toThrow(/ADMIN_DEV_EMAIL/);
+    expect(() => loadConfig({ ...dev, NODE_ENV: 'production', MONGODB_URI: 'mongodb://x' })).toThrow(/not allowed in production/);
+    expect(() => loadConfig({ ADMIN_DEV_EMAIL: 'dev@example.com' })).toThrow(/together/);
+    expect(() => loadConfig({ ADMIN_DEV_EMAIL: 'dev@example.com', ADMIN_DEV_PASSWORD: 'short' })).toThrow(/ADMIN_DEV_PASSWORD/);
+  });
+});

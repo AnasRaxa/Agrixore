@@ -9,7 +9,8 @@ Offline-first PWA for farmers in Pakistan: on-device crop disease detection (cor
 | Area | State |
 |---|---|
 | `apps/web` | Phase 1 frontend built. Disease detection uses the **experimental** v4 model (public-dataset accuracy only; see `ml/reports/model-v4/README.md`) |
-| `apps/api` | Not built yet (placeholder) |
+| `apps/api` | Foundation built: health and mandi endpoints, plus admin sign-in and manual price entry |
+| `apps/admin` | Admin dashboard built: operators set mandi prices by hand |
 | `ml/` | v4 notebook, reports and manifest tooling. v5 (not_a_leaf class, calibration, field test set) not started |
 | `content/` | Draft entries for all 13 model classes (English + Urdu), **not expert-reviewed** |
 
@@ -30,6 +31,10 @@ pnpm dev
 ```
 Without `VITE_API_BASE_URL` the mandi screen shows its own clearly labelled sample data.
 
+## Admin dashboard (manual mandi prices)
+
+An operator signs in at `/admin/` on the API and types in mandi prices; farmers see them in the app. Setup, deployment and security notes: [`docs/ADMIN_AND_API.md`](docs/ADMIN_AND_API.md).
+
 ## Deployment
 
 The frontend deploys to Vercel from GitHub Actions: PRs get a preview URL, merges to `main` go to production. Setup: [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md).
@@ -39,7 +44,7 @@ The frontend deploys to Vercel from GitHub Actions: PRs get a preview URL, merge
 ```
 apps/web        Farmer PWA (Vite + React + TypeScript + Tailwind)
 apps/api        Node.js API (foundation built: health and mandi endpoints)
-apps/admin      Admin dashboard (Phase 3)
+apps/admin      Admin dashboard (React + Vite; served by the API at /admin/)
 packages/shared Types, constants and pure logic shared by web and api
 content/        Knowledge base (JSON, English + Urdu) and crop calendars
 ml/             Training, evaluation and export (Python)

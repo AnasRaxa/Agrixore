@@ -11,3 +11,8 @@ export async function disconnectMongo(): Promise<void> {
 export function mongoIsReady(): boolean {
   return mongoose.connection.readyState === 1;
 }
+
+/** Builds every model's indexes, including the ones that keep one price per commodity, market and day. */
+export async function ensureIndexes(): Promise<void> {
+  await Promise.all(Object.values(mongoose.models).map((m) => m.init()));
+}

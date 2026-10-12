@@ -259,7 +259,7 @@ Threshold values live in a shared constants file and are finalized after calibra
 **F-MD-04 Local price targets.** User sets "alert me when wheat reaches X in district Y". In P1 targets are stored locally and checked on every refresh when the app is opened. True background push comes in P3.
 
 **F-MD-05 Data source status.** ❓ **Unresolved and high risk.** No verified open Pakistani mandi price API is confirmed. A one-week spike must evaluate official or public sources (for example provincial agriculture marketing portals) for availability, format and terms of use. Until resolved:
-- P1 uses a **seeded/admin-entered dataset** behind the same API shape, clearly marked with its date.
+- P1 uses a **seeded/admin-entered dataset** behind the same API shape, clearly marked with its date. Admin entry now exists: see `docs/ADMIN_AND_API.md`.
 - Never fabricate prices. Never show seeded data as "live".
 
 **Phase 2:** F-MD-10 trend charts (7 / 30 days), F-MD-11 nearby market comparison, F-MD-12 government support prices (only once a verified source exists), F-MD-13 commodity favorites.
@@ -354,7 +354,7 @@ Bottom navigation (4 items, large targets): **Home · Scan · Weather · Mandi**
 | Data | Source | Status |
 |---|---|---|
 | Weather and forecast | Open-Meteo API (no key, free for non-commercial use; check terms before any commercial use) | 🟡 chosen, verify terms |
-| Mandi prices | ❓ Unknown. Spike required (see F-MD-05) | ❓ Open |
+| Mandi prices | Interim: typed in by hand in the admin dashboard. Automated source still unknown; spike required (see F-MD-05) | 🟡 interim, ❓ automation open |
 | Corn images | PlantVillage-style public dataset | 🟡 verify license |
 | Wheat and cotton images | ❓ To be found (Kaggle, Mendeley and similar) plus own field photos | ❓ Open |
 | Crop calendars, fertilizer rates | ❓ Official agriculture guidance, expert-reviewed | ❓ Open |
