@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+/* Same calm leaf-green tokens as the farmer app. */
+:root {
+  --paper: #f4f7f1;
+  --surface: #ffffff;
+  --tint: #e6f0e1;
+  --line: #d6e1d0;
+  --leaf: #2f6b3f;
+  --canopy: #1e4a2b;
+  --sprout: #8fc27a;
+  --ink: #1b2a20;
+  --muted: #5b6d5f;
+  --grain: #8a5a0b;
+  --grain-tint: #fbf1dc;
+  --clay: #a8341f;
+  --clay-tint: #fbe7e3;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-surface: var(--surface);
+  --color-tint: var(--tint);
+  --color-line: var(--line);
+  --color-leaf: var(--leaf);
+  --color-canopy: var(--canopy);
+  --color-sprout: var(--sprout);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-grain: var(--grain);
+  --color-grain-tint: var(--grain-tint);
+  --color-clay: var(--clay);
+  --color-clay-tint: var(--clay-tint);
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Hanken Grotesk Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+}
+
+:focus-visible { outline: 3px solid var(--leaf); outline-offset: 2px; }
