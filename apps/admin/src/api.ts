@@ -1,4 +1,4 @@
-import type { AdminProfile, PriceBatch, PriceRecord, PriceSummary } from '@agrixore/shared';
+import type { AdminPriceDto, AdminProfile, PriceInput, PriceSummary } from '@agrixore/shared';
 
 export class ApiError extends Error {
   constructor(
@@ -12,6 +12,7 @@ export class ApiError extends Error {
 }
 
 interface Envelope<T, M> { data: T; meta: M }
+interface Meta { page?: number; pageSize?: number; total?: number }
 
 async function call<T, M = undefined>(method: string, path: string, body?: unknown): Promise<Envelope<T, M>> {
   let res: Response;
@@ -43,7 +44,7 @@ export const api = {
   login: (email: string, password: string) => call<AdminProfile>('POST', '/admin/auth/login', { email, password }).then((r) => r.data),
   logout: () => call<{ ok: true }>('POST', '/admin/auth/logout').then(() => undefined),
   summary: () => call<PriceSummary>('GET', '/admin/summary').then((r) => r.data),
-  prices: (q: PriceQuery) => call<PriceRecord[], { total: number; page: number; limit: number }>('GET', `/admin/prices${qs(q)}`).then((r) => ({ items: r.data, ...r.meta })),
-  savePrices: (batch: PriceBatch) => call<PriceRecord[]>('PUT', '/admin/prices', batch).then((r) => r.data),
+  prices: (q: PriceQuery) => call<AdminPriceDto[], Meta>('GET', `/admin/prices${qs(q)}`).then((r) => ({ items: r.data, total: r.meta.total ?? r.data.length })),
+  savePrices: (batch: { prices: PriceInput[] }) => call<AdminPriceDto[]>('PUT', '/admin/prices', batch).then((r) => r.data),
   deletePrice: (id: string) => call<{ ok: true }>('DELETE', `/admin/prices/${id}`).then(() => undefined),
 };

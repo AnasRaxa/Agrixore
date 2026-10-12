@@ -1,10 +1,10 @@
 import { describe, expect, it } from 'vitest';
-import type { PriceRecord } from '@agrixore/shared';
+import type { AdminPriceDto } from '@agrixore/shared';
 import { draftFromPrevious, draftFromRecords, emptyDraft, fillBlanks, rowsEqual, toBatch } from './entry';
 
-const rec = (over: Partial<PriceRecord> = {}): PriceRecord => ({
-  id: 'a'.repeat(24), commodityId: 'wheat', districtId: 'lahore', marketDate: '2026-10-11', min: 3800, modal: 4000, max: 4200,
-  unit: 'PKR per 40 kg', source: 'manual', updatedBy: 'x@y.co', updatedAt: '2026-10-11T07:00:00.000Z', ...over,
+const rec = (over: Partial<AdminPriceDto> = {}): AdminPriceDto => ({
+  id: 'a'.repeat(24), commodityId: 'wheat', marketId: 'lahore-manual', districtId: 'lahore', marketDate: '2026-10-11', min: 3800, modal: 4000, max: 4200,
+  unit: 'PKR/40kg', currency: 'PKR', source: 'manual', sample: false, updatedBy: 'x@y.co', updatedAt: '2026-10-11T07:00:00.000Z', ...over,
 });
 
 describe('draftFromRecords', () => {

@@ -1,7 +1,7 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { Check, History as HistoryIcon } from 'lucide-react';
 import { useState } from 'react';
-import { COMMODITY_IDS, PRICE_UNIT, todayInPakistan, type CommodityId, type PriceInput, type PriceRecord } from '@agrixore/shared';
+import { COMMODITY_IDS, todayInPakistan, type AdminPriceDto, type CommodityId, type PriceInput } from '@agrixore/shared';
 import { ApiError, api } from '../api';
 import { COMMODITY_LABEL, DISTRICTS, districtLabel } from '../labels';
 import { draftFromPrevious, draftFromRecords, emptyDraft, fillBlanks, isBlank, rowsEqual, toBatch, type Draft, type RowDraft } from '../lib/entry';
@@ -38,7 +38,7 @@ export function PriceEntryForm({ target, onTarget, nonce, sectionRef }: Props) {
     <Card>
       <section ref={sectionRef} aria-labelledby="set-prices" tabIndex={-1} className="outline-none">
         <h2 id="set-prices" className="text-lg font-bold text-canopy">Set prices</h2>
-        <p className="mb-4 text-sm text-muted">Enter the prices you collected for one district and one market day. All prices are in {PRICE_UNIT}.</p>
+        <p className="mb-4 text-sm text-muted">Enter the prices you collected for one district and one market day. All prices are in PKR per 40 kg.</p>
 
         <div className="mb-4 grid gap-3 sm:grid-cols-2">
           <div>
@@ -64,7 +64,7 @@ export function PriceEntryForm({ target, onTarget, nonce, sectionRef }: Props) {
   );
 }
 
-function EntryGrid({ district, date, records }: { district: string; date: string; records: PriceRecord[] }) {
+function EntryGrid({ district, date, records }: { district: string; date: string; records: AdminPriceDto[] }) {
   const qc = useQueryClient();
   const saved = draftFromRecords(records.filter((r) => r.marketDate === date));
   const previous = draftFromPrevious(records, date);

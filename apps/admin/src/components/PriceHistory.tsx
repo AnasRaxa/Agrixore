@@ -1,7 +1,7 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { Pencil, Trash2 } from 'lucide-react';
 import { useState } from 'react';
-import type { PriceRecord } from '@agrixore/shared';
+import type { AdminPriceDto } from '@agrixore/shared';
 import { api } from '../api';
 import { COMMODITY_IDS, COMMODITY_LABEL, DISTRICTS, commodityLabel, districtLabel } from '../labels';
 import { formatDate, formatDateTime, formatPkr } from '../lib/format';
@@ -9,7 +9,7 @@ import { Button, Card, Notice, Spinner, inputClass } from './ui';
 
 const PAGE_SIZE = 25;
 
-export function PriceHistory({ onEdit }: { onEdit: (r: PriceRecord) => void }) {
+export function PriceHistory({ onEdit }: { onEdit: (r: AdminPriceDto) => void }) {
   const qc = useQueryClient();
   const [commodity, setCommodity] = useState('');
   const [district, setDistrict] = useState('');
@@ -22,14 +22,14 @@ export function PriceHistory({ onEdit }: { onEdit: (r: PriceRecord) => void }) {
   });
 
   const del = useMutation({
-    mutationFn: (r: PriceRecord) => api.deletePrice(r.id),
+    mutationFn: (r: AdminPriceDto) => api.deletePrice(r.id),
     onSuccess: () => {
       void qc.invalidateQueries({ queryKey: ['prices'] });
       void qc.invalidateQueries({ queryKey: ['summary'] });
     },
   });
 
-  const confirmDelete = (r: PriceRecord) => {
+  const confirmDelete = (r: AdminPriceDto) => {
     if (window.confirm(`Delete the ${commodityLabel(r.commodityId)} price for ${districtLabel(r.districtId)} on ${formatDate(r.marketDate)}?\n\nFarmers will stop seeing it.`)) del.mutate(r);
   };
 

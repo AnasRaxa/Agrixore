@@ -2,7 +2,6 @@ import { useQuery } from '@tanstack/react-query';
 import { CalendarCheck, Clock, Database, MapPin } from 'lucide-react';
 import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
-import { CURRENT_PRICE_DAYS } from '@agrixore/shared';
 import { api } from '../api';
 import { Card, Notice, Spinner } from '../components/ui';
 import { commodityLabel } from '../labels';
@@ -37,7 +36,7 @@ export function DashboardPage() {
       {q.isError && <Notice tone="error" live>Could not load the summary. Please refresh the page.</Notice>}
       {q.data && (
         <>
-          {q.data.totalEntries === 0 && <Notice tone="warn">No prices have been entered yet, so farmers still see the labelled sample data. Add your first prices on the Mandi prices page.</Notice>}
+          {q.data.totalEntries === 0 && <Notice tone="warn">No prices have been entered yet. Add your first prices on the Mandi prices page.</Notice>}
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             <Stat icon={<Database aria-hidden="true" className="size-5" />} label="Prices saved" value={String(q.data.totalEntries)} />
             <Stat icon={<CalendarCheck aria-hidden="true" className="size-5" />} label={`Entered for ${formatDate(q.data.today)}`} value={String(q.data.entriesToday)} />
@@ -47,9 +46,7 @@ export function DashboardPage() {
 
           <Card>
             <h2 className="text-lg font-bold text-canopy">Coverage by commodity</h2>
-            <p className="mb-4 text-sm text-muted">
-              Districts with a price from the last 7 days. The farmer app hides prices older than {CURRENT_PRICE_DAYS} days.
-            </p>
+            <p className="mb-4 text-sm text-muted">Districts with a manually entered price from the last 7 days.</p>
             <div className="relative overflow-x-auto">
               <table className="w-full min-w-[20rem] text-start text-sm">
                 <caption className="sr-only">Price coverage by commodity</caption>
